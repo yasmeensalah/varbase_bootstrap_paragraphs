@@ -5,8 +5,6 @@ namespace Drupal\varbase_bootstrap_paragraphs\Entity;
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
 use Drupal\varbase_bootstrap_paragraphs\ParagraphsBehaviorCollection;
-use Drupal\varbase_bootstrap_paragraphs\ParagraphsBehaviorInterface;
-use Drupal\varbase_bootstrap_paragraphs\ParagraphsTypeInterface;
 
 /**
  * Defines the ParagraphsType entity.
@@ -51,11 +49,10 @@ class ParagraphsColors extends ConfigEntityBundleBase implements EntityWithPlugi
    *
    * @var array
    */
-  public $behavior_plugins = [];
+  public $behaviorPlugins = [];
 
   /**
-   * Holds the collection of behavior plugins that are attached to this
-   * paragraphs type.
+   * Cllection of behavior plugins that are attached to this paragraphs type.
    *
    * @var \Drupal\paragraphs\ParagraphsBehaviorCollection
    */
@@ -66,7 +63,7 @@ class ParagraphsColors extends ConfigEntityBundleBase implements EntityWithPlugi
    */
   public function getBehaviorPlugins() {
     if (!isset($this->behaviorCollection)) {
-      $this->behaviorCollection = new ParagraphsBehaviorCollection(\Drupal::service('plugin.manager.paragraphs.behavior'), $this->behavior_plugins);
+      $this->behaviorCollection = new ParagraphsBehaviorCollection(\Drupal::service('plugin.manager.paragraphs.behavior'), $this->behaviorPlugins);
     }
     return $this->behaviorCollection;
   }
