@@ -1,7 +1,9 @@
 # Varbase Bootstrap Paragraphs
-A suite of Paragraph bundles made with the Bootstrap framework to work with the
-[Varbase](https://www.drupal.org/project/varbase) distribution.
 
+A suite of Paragraph bundles to be used for
+[Varbase](https://www.drupal.org/project/varbase) distribution.
+Made with the Bootstrap framework, based on a fork of Bootstrap Paragraph module
+[bootstrap_paragraphs](https://www.drupal.org/project/bootstrap_paragraphs)
 
 For content creators, attempts to use wysiwyg editors to create structured
 layouts typically lead to frustration and compromise. With this module you
