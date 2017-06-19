@@ -22,5 +22,6 @@ dependencies:
   - text
   - user
   - varbase_media
+  - varbase_webform
   - views
   - viewsreference
