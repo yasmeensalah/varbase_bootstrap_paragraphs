@@ -43,12 +43,6 @@ function varbase_bootstrap_paragraphs_theme($existing, $type, $theme, $path) {
     'field__paragraph__bp_column_content' => [
       'base hook' => 'paragraph',
     ],
-    'field__paragraph__bp_column_content_2' => [
-      'base hook' => 'paragraph',
-    ],
-    'field__paragraph__bp_column_content_3' => [
-      'base hook' => 'paragraph',
-    ],
     'field__paragraph__bp_image__image' => [
       'base hook' => 'paragraph',
     ],
