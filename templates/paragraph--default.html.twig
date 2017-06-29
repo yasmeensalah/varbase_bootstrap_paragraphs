@@ -131,6 +131,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
+{# Merges Width field with classes. #}
+{% set width_field = content.bp_width|render %}
+{% if width_field %}
+  {% set classes = classes|merge(layout_width_classes) %}
+{% endif %}
+
 {# Merges Background field with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
