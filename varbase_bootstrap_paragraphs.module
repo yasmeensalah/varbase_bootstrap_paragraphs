@@ -59,7 +59,7 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
     $file = File::load($target_id);
     $file_uri = $file->getFileUri();
-    $style = ImageStyle::load('de2e_auto');
+    $style = ImageStyle::load('default');
     $file_path = $style->buildUrl($file_uri);
 
     // Add variables to template.
