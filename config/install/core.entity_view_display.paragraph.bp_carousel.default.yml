@@ -19,7 +19,7 @@ content:
     type: list_default
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   bp_slide_content:
@@ -35,14 +35,14 @@ content:
     type: list_default
     weight: 1
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   bp_width:
     type: list_default
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:

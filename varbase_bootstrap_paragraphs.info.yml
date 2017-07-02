@@ -2,7 +2,8 @@ name: 'Varbase Bootstrap Paragraphs'
 type: module
 description: 'A suite of Paragraph bundles to be used for Varbase distribution. Made with the Boostrap framework, based on a fork of Bootstrap Paragraph module (bootstrap_paragraphs).'
 core: 8.x
-package: Varbase Bootstrap Paragraphs
+version: 8.x-4.x-dev
+package: Varbase
 dependencies:
   - block
   - entity_browser
@@ -25,3 +26,4 @@ dependencies:
   - varbase_webform
   - views
   - viewsreference
+  - webform

@@ -17,9 +17,9 @@ mode: default
 content:
   bp_background:
     type: list_default
-    weight: 1
+    weight: 2
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   bp_column_content:
@@ -32,18 +32,19 @@ content:
       link: ''
     third_party_settings: {  }
   bp_image_field:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
   bp_width:
     type: list_default
-    weight: 2
+    weight: 1
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:

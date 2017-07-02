@@ -16,7 +16,7 @@ bundle: bp_view
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -26,13 +26,13 @@ content:
     weight: 3
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
   bp_view:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
       plugin_types:

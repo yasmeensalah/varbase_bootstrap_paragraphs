@@ -21,4 +21,5 @@ settings:
   handler_settings: {  }
   plugin_types:
     block: block
+  preselect_views: {  }
 field_type: viewsreference

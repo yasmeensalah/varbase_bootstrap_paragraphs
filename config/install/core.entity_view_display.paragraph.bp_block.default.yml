@@ -15,14 +15,14 @@ bundle: bp_block
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
     region: content
   bp_block:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
       link: true

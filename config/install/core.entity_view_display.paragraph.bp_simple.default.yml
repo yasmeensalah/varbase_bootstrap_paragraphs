@@ -16,14 +16,14 @@ bundle: bp_simple
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
     region: content
   bp_image_field:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link: true
@@ -32,7 +32,7 @@ content:
     type: entity_reference_entity_view
     region: content
   bp_text:
-    weight: 2
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
