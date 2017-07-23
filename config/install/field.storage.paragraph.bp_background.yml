@@ -12,7 +12,7 @@ settings:
   allowed_values:
     -
       value: 'vbp_color_01'
-      label: 'Curious Blue'
+      label: 'Blue'
     -
       value: 'vbp_color_02'
       label: 'Madison'
@@ -21,25 +21,10 @@ settings:
       label: 'Dark Gray'
     -
       value: 'vbp_color_04'
-      label: 'Dim Gray'
+      label: 'Light Gray'
     -
       value: 'vbp_color_05'
-      label: 'Very Light Grey'
-    -
-      value: 'vbp_color_06'
-      label: 'White'
-    -
-      value: 'vbp_color_07'
-      label: 'White Smoke'
-    -
-      value: 'vbp_color_08'
-      label: 'Black'
-    -
-      value: 'vbp_color_09'
-      label: 'Chambray'
-    -
-      value: 'vbp_color_10'
-      label: 'Transparent Curious Blue'
+      label: 'Red'
   allowed_values_function: ''
 module: options
 locked: false

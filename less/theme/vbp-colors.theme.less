@@ -9,66 +9,117 @@
   display: table;
 }
 
-/* Adds padding to fill in color. */
+// Adds padding to fill in color.
 .paragraph.paragraph--color > .paragraph__column {
   padding-top: @jumbotron-padding;
   padding-bottom: @jumbotron-padding;
 }
 
-/* Fills color on colorless .paragraph__column after color .paragraph__column. */
+// Fills color on colorless .paragraph__column after color .paragraph__column.
 .paragraph.paragraph--color + .paragraph > .paragraph__column {
   padding-top: @jumbotron-padding;
 }
 
-// vbp_color_01: Curious Blue
+// Background colours;
+// -----------------------------------------------------------------------------
+// vbp_color_01: Blue
 // vbp_color_02: Madison
 // vbp_color_03: Dark Gray
-// vbp_color_04: Dim Gray
-// vbp_color_05: Very Light Grey
-// vbp_color_06: White
-// vbp_color_07: White Smoke
-// vbp_color_08: Black
-// vbp_color_09: Chambray
-// vbp_color_10: Transparent Curious Blue 
+// vbp_color_04: Light Gray
+// vbp_color_05: Red
 
-@vbp_color_01: #338EC7; // Curious Blue
+@vbp_color_01: #338EC7; // Blue
 @vbp_color_02: #2C3E50; // Madison
 @vbp_color_03: #A4A4A4; // Dark Gray
-@vbp_color_04: #696969; // Dim Gray
-@vbp_color_05: #CCCCCC; // Very Light Grey
-@vbp_color_06: #ffffff; // White
-@vbp_color_07: #f8f8f8; // White Smoke
-@vbp_color_08: #000000; // Black
-@vbp_color_09: #42586F; // Chambray
-@vbp_color_10: rgba(51, 142, 199, 0.50); // Transparent Curious Blue
+@vbp_color_04: #D3D3D3; // Light Gray
+@vbp_color_05: #CC3C2D; // Red
+
+// Foreground colours:
+// -----------------------------------------------------------------------------
+// vbp_foreground_color_01: White for background vbp_color_01 color.
+// vbp_foreground_color_02: White for background vbp_color_02 color.
+// vbp_foreground_color_03: White for background vbp_color_03 color.
+// vbp_foreground_color_04: Black for background vbp_color_04 color.
+// vbp_foreground_color_05: White for background vbp_color_05 color.
+
+@vbp_foreground_color_01: #ffffff; // White
+@vbp_foreground_color_02: #ffffff; // White
+@vbp_foreground_color_03: #ffffff; // White
+@vbp_foreground_color_04: #000000; // Black
+@vbp_foreground_color_05: #ffffff; // White
 
 .vbp_color_01 {
-    background: @vbp_color_01;
+  background: @vbp_color_01;
+  color: @vbp_foreground_color_01;
+  
+  a {
+    color: @vbp_foreground_color_01;
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      color: @vbp_foreground_color_01;
+    }
+  }
 }
 .vbp_color_02 {
-    background: @vbp_color_02;
+  background: @vbp_color_02;
+  color: @vbp_foreground_color_02;
+  
+  a {
+    color: @vbp_foreground_color_02;
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      color: @vbp_foreground_color_02;
+    }
+  }
 }
 .vbp_color_03 {
-    background: @vbp_color_03;
+  background: @vbp_color_03;
+  color: @vbp_foreground_color_03;
+  
+  a {
+    color: @vbp_foreground_color_03;
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      color: @vbp_foreground_color_03;
+    }
+  }
 }
 .vbp_color_04 {
-    background: @vbp_color_04;
+  background: @vbp_color_04;
+  color: @vbp_foreground_color_04;
+  
+  a {
+    color: @vbp_foreground_color_04;
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      color: @vbp_foreground_color_04;
+    }
+  }
 }
 .vbp_color_05 {
-    background: @vbp_color_05;
-}
-.vbp_color_06 {
-    background: @vbp_color_06;
-}
-.vbp_color_07 {
-    background: @vbp_color_07;
-}
-.vbp_color_08 {
-    background: @vbp_color_08;
-}
-.vbp_color_09 {
-    background: @vbp_color_09;
-}
-.vbp_color_10 {
-    background: @vbp_color_10;
+  background: @vbp_color_05;
+  color: @vbp_foreground_color_05;
+  
+  a {
+    color: @vbp_foreground_color_05;
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      color: @vbp_foreground_color_05;
+    }
+  }
 }
