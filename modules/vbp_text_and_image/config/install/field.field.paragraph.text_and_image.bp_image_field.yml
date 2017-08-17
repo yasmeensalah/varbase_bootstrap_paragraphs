@@ -4,11 +4,11 @@ dependencies:
   config:
     - field.storage.paragraph.bp_image_field
     - media_entity.bundle.image
-    - paragraphs.paragraphs_type.bp_view
-id: paragraph.bp_view.bp_image_field
+    - paragraphs.paragraphs_type.text_and_image
+id: paragraph.text_and_image.bp_image_field
 field_name: bp_image_field
 entity_type: paragraph
-bundle: bp_view
+bundle: text_and_image
 label: 'Background image'
 description: ''
 required: false
