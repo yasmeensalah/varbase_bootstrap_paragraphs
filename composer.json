@@ -7,13 +7,8 @@
   "minimum-stability": "dev",
   "authors": [
     {
-      "name": "Mohammed J. Razem",
-      "homepage": "https://github.com/moerazem",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Rajab Natshah",
-      "homepage": "https://github.com/Natshah",
+      "name": "Vardot",
+      "homepage": "https://www.drupal.org/vardot",
       "role": "Maintainer"
     }
   ],
