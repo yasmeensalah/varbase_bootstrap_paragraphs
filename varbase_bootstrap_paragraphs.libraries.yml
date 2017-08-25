@@ -3,10 +3,6 @@ vbp-default:
   css:
     base:
       css/base/vbp-default.base.css: {}
-    layout:
-      css/layout/vbp-widths.layout.css: {}
-      css/layout/vbp-columns-three-uneven.layout.css: {}
-      css/layout/vbp-columns-two-uneven.layout.css: {}
   dependencies:
     - core/jquery
 

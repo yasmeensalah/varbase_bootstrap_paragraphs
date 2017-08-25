@@ -26,12 +26,19 @@
 }
 
 // Nesting paragraphs.
-
+.paragraph .paragraph .bg-edge2edge {
+  width: 100%;
+  position: initial;
+  margin: 0;
+}
 // Resets Base Paragraph Styling for Nested Paragraphs.
 .paragraph .paragraph,
-.paragraph .paragraph .paragraph {
+.paragraph .paragraph .paragraph , 
+.modal .modal-body .paragraph, .modal .modal-footer .paragraph {
   margin-left: 0;
   margin-right: 0;
+  width: 100%;
+  position: initial;
 }
 
 .paragraph > .paragraph__column .paragraph > .paragraph__column,
@@ -72,4 +79,9 @@
   .make-md-column-offset(3);
   .make-lg-column(6);
   .make-lg-column-offset(3);
+}
+
+.background-style {
+  background-size: cover;
+  background-repeat: no-repeat;  
 }

@@ -41,12 +41,6 @@
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-colors') }}
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-tabs') }}
 
-{# Layout width. #}
-{% if content.bp_width|render %}
-  {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width] %}
-{% endif %}
-
 {# Background color. #}
 {% if content.bp_background|render %}
   {% set layout_background = content.bp_background['#items'].getString() %}
@@ -68,22 +62,13 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
-{# Row classes. #}
-{% set row_attribute = create_attribute() %}
-{% set width_field = content.bp_width|render %}
-  {%
-    set row_classes = [
-    'row',
-    'paragraph__column',
-    ]
-  %}
-{% if width_field %}
-  {% set row_classes = row_classes|merge(layout_width_classes) %}
-{% endif %}
-
-{# Background image it's always edge to edge #}
+{# If there is BG image it's always edge to edge #}
 {% if (VBP.background_image.url or content.bp_background|render) %}
     {% set attributes = attributes.addClass('bg-edge2edge') %}
+{% endif %}
+
+{% if VBP.background_image.url %}
+  {% set attributes = attributes.addClass('background-style') %}
 {% endif %}
 
 {# Sets Unique ID for Accordion from Paragraph ID. #}
@@ -91,31 +76,35 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Prints Tabs template. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  <div{{ row_attribute.addClass(row_classes) }}>
-    {{ title_suffix }}
-    <ul class="nav nav-tabs" role="tablist">
-      {# Loops through the tab sections to print the tab section titles. #}
-      {% for key, item in content.bp_tab_section if key|first != '#' %}
-        {% set attributes = attributes.removeClass('bg-edge2edge') %}
-        <li role="presentation" class="{% if loop.first %}active{% endif %}"><a href="#tab{{ paragraph_id }}-{{ key }}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
-      {% endfor %}
-    </ul>
-    <div class="tab-content">
-      {# Loops through the tab sections again to print the tab section bodies. #}
-      {% for key, item in content.bp_tab_section if key|first != '#' %}
-        <div role="tabpanel" class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ paragraph_id }}-{{ key }}">
-          {% for body_key, body_item in item['#paragraph'].bp_tab_section_body %}
-            {# Use the same render array as item and set the '#paragraph'. #}
-            {% set section_body = item %}
-            {# Load the entity for the current translation #}
-            {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
-            {# Remove the cache keys so it doesn't repeat the first value. #}
-            {% set section_body = section_body|merge({'#cache': {}}) %}
-            {# Print the compiled section body. #}
-            {{ section_body }}
+  <div class="container">
+    <div class = "row">
+      <div class="{{- VBP.bp_width.value -}}">
+        {{ title_suffix }}
+        <ul class="nav nav-tabs" role="tablist">
+          {# Loops through the tab sections to print the tab section titles. #}
+          {% for key, item in content.bp_tab_section if key|first != '#' %}
+            {% set attributes = attributes.removeClass('bg-edge2edge') %}
+            <li role="presentation" class="{% if loop.first %}active{% endif %}"><a href="#tab{{ paragraph_id }}-{{ key }}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+          {% endfor %}
+        </ul>
+        <div class="tab-content">
+          {# Loops through the tab sections again to print the tab section bodies. #}
+          {% for key, item in content.bp_tab_section if key|first != '#' %}
+            <div role="tabpanel" class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ paragraph_id }}-{{ key }}">
+              {% for body_key, body_item in item['#paragraph'].bp_tab_section_body %}
+                {# Use the same render array as item and set the '#paragraph'. #}
+                {% set section_body = item %}
+                {# Load the entity for the current translation #}
+                {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
+                {# Remove the cache keys so it doesn't repeat the first value. #}
+                {% set section_body = section_body|merge({'#cache': {}}) %}
+                {# Print the compiled section body. #}
+                {{ section_body }}
+              {% endfor %}
+            </div>
           {% endfor %}
         </div>
-      {% endfor %}
+      </div>
     </div>
   </div>
 </div>
