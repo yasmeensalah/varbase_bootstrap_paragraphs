@@ -51,17 +51,7 @@
 {# Converts database values to classes supplied by template. #}
 {% if content.bp_slide_interval|render %}
   {% set slide_interval = content.bp_slide_interval['#items'].getString() %}
-  {% set slide_interval_classes = [
-    'false' == slide_interval ? 'false',
-    '1000' == slide_interval ? '1000',
-    '2000' == slide_interval ? '2000',
-    '3000' == slide_interval ? '3000',
-    '4000' == slide_interval ? '4000',
-    '5000' == slide_interval ? '5000',
-    '6000' == slide_interval ? '6000',
-    '7000' == slide_interval ? '7000',
-  ]
-  %}
+  {% set slide_interval_classes = [ slide_interval ] %}
 {% endif %}
 
 {# The template default set classes. #}

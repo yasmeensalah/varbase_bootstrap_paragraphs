@@ -5,9 +5,6 @@
  * Text and image sub-module file.
  */
 
-use Drupal\file\Entity\File;
-use Drupal\image\Entity\ImageStyle;
-
 /**
  * Implements hook_theme().
  */
@@ -47,4 +44,3 @@ function _varbase_bootstrap_paragraphs_text_and_image_add_template_variable(arra
   }
   return $data;
 }
-

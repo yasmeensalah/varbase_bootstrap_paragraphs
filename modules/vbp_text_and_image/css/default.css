@@ -11,7 +11,7 @@
   .paragraph.paragraph--type--text-and-image .row {
     display: flex;
   }
-   .align2left.wrapper {
+  .align2left.wrapper {
     padding-left: 35px;
   }
 }
@@ -34,3 +34,4 @@
   display: table-cell;
   vertical-align: middle;
 }
+/*# sourceMappingURL=default.css.map */

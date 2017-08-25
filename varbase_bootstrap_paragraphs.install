@@ -4,9 +4,15 @@
  * @file
  * Install, uninstall and update hooks for Varbase Boostrap Paragraphs module.
  */
+
 use Symfony\Component\Yaml\Yaml;
+
+/**
+ * Issue #2904616: Enhanced the width of Paragraph types to respect container.
+ */
 function varbase_bootstrap_paragraphs_update_8001() {
-	  $profile_path = drupal_get_path('module', 'varbase_bootstrap_paragraphs') . '/config/install/';
+  $profile_path = drupal_get_path('module', 'varbase_bootstrap_paragraphs') . '/config/install/';
+
   $configs['field.storage.paragraph.bp_width'] = $profile_path . 'field.storage.paragraph.bp_width.yml';
 
   foreach ($configs as $name => $config_path) {

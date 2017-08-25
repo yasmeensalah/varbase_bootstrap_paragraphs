@@ -73,6 +73,7 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     'bg-edge2edge' => 'bg-edge2edge col-xs-12',
   );
 
+  $width = 'col-xs-12';
   if (isset($width_map[$width_value])) {
     $width = $width_map[$width_value];
   }

@@ -20,14 +20,13 @@ and layout.
 
 **Bundle Types:**
 
-  * Simple HTML
+  * Rich Text
   * Image
   * Accordion
   * Carousel
   * Columns (Equal, up to 6)
   * Columns (Three Uneven)
   * Columns (Two Uneven)
-  * Contact Form
   * Drupal Block
   * Modal
   * Tabs
@@ -36,17 +35,17 @@ and layout.
 
 **Backgrounds:**
 
-Each Paragraph has width and background color options. Included are over
-50 background colors and five empty background classes for you to customize
-in your own theme.
+Each Paragraph has styling settings, including width, Backgournd image, and
+background color options.
 
 **Widths:**
 
-  * Tiny - col-4, offset-4
-  * Narrow - col-6, offset-3
-  * Medium - col-8, offset-2
-  * Wide - col-10, offset-1
-  * Full - col-12
+  * Tiny : col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2
+  * Narrow : col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1
+  * Medium : col-md-8 col-md-offset-2
+  * Wide : col-md-10 col-md-offset-1
+  * Full : col-xs-12
+  * Edge to Edge : bg-edge2edge col-xs-12
 
 **Installation:**
 
@@ -54,7 +53,8 @@ in your own theme.
   * Verify installation by visiting /admin/structure/paragraphs_type and seeing
     your new Paragraph bundles.
   * On the Simple bundle, click Manage fields and choose which Text formats
-    to use.  We recommend a *Full HTML* for the Simple.
+    to use.  We recommend a *Rich Text* text format for the Rich Text paragraph
+    type.
   * Go to your content type and add a new field to type Entity revisions,
     Paragraphs.
   * Allow unlimited so creators can add more that one Paragraph to the node.
@@ -69,8 +69,7 @@ in your own theme.
 
 **Requirements:**
 
-  * [Entity Reference Revisions]
-(https://www.drupal.org/project/entity_reference_revisions)
+  * [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
   * Field
   * File
   * Filter
