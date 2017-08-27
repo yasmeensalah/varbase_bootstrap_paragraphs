@@ -84,7 +84,7 @@ content:
     third_party_settings: {  }
     region: content
   bp_background:
-    type: options_select
+    type: options_buttons
     weight: 22
     region: content
     settings: {  }

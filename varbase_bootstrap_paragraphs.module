@@ -7,6 +7,7 @@
 
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -68,6 +69,31 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
       'value' => $width,
     ],
   ]);
+}
+
+/**
+ * Implements hook_form_paragraphs_subform_alter().
+ */
+function varbase_bootstrap_paragraphs_form_paragraphs_subform_alter(array &$subform, \Drupal\Core\Form\FormStateInterface $form_state, $delta) {
+  
+  // Add the Varbase Bootstrap Paragraphs default admin styling.
+  $subform['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
+  
+  // If the paragraph type has got a background color field.
+  if (isset($subform['bp_background']) && isset($subform['bp_background']['widget'])) {
+    $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
+    $background_colors = $configFactory->get('background_colors');
+
+    $background_colors_options = ['vbp_bg_none' => t('N/A')];
+    $lines = explode(PHP_EOL, $background_colors);
+    foreach($lines as $line) {
+      $line = explode('|', $line);
+      $background_colors_options[$line[0]] = $line[1];
+    }
+
+    $subform['bp_background']['widget']['#options'] = $background_colors_options;
+    $subform['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
+  }
 }
 
 /**

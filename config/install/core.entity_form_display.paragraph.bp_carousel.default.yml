@@ -72,7 +72,7 @@ content:
     weight: 23
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   bp_slide_content:
     type: entity_reference_paragraphs

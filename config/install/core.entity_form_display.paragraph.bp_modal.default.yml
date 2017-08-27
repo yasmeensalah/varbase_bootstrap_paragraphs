@@ -78,7 +78,7 @@ content:
     weight: 21
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   bp_image_field:
     weight: 22
