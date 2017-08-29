@@ -10,8 +10,8 @@
 
       $(".field--name-bp-background.field--widget-options-buttons input:radio").each(function() {
         $(this).next('label').addClass($(this).val());
-      });   
+      });
     }
   };
-  
+
 })(window.jQuery, window._, window.Drupal, window.drupalSettings);

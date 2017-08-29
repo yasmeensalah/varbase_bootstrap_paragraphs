@@ -33,10 +33,10 @@
   width: 100%;
   height: 100%;
 }
-.field--name-bp-background .form-type-radio label.vbp_bg_none {
+.field--name-bp-background .form-type-radio label._none {
   background: #ffffff !important;
 }
-.field--name-bp-background .form-type-radio label.vbp_bg_none:after {
+.field--name-bp-background .form-type-radio label._none:after {
   display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -72,7 +72,7 @@
 [dir=rtl] .field--name-bp-background .form-type-radio label {
   float: right !important;
 }
-[dir=rtl] .field--name-bp-background .form-type-radio label.vbp_bg_none:after {
+[dir=rtl] .field--name-bp-background .form-type-radio label._none:after {
   left: 0;
   right: -5px;
 }
