@@ -112,23 +112,6 @@ function varbase_bootstrap_paragraphs_form_paragraphs_subform_alter(array &$subf
 }
 
 /**
- * 
- */
-function vbp_background_colors_allowed_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
-  $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
-  $background_colors = $configFactory->get('background_colors');
-
-  $background_colors_options = [];
-  $lines = explode(PHP_EOL, $background_colors);
-  foreach($lines as $line) {
-    $line = explode('|', $line);
-    $background_colors_options[$line[0]] = $line[1];
-  }
-  
-  return $background_colors_options;
-}
-
-/**
  * Populates TWIG variables with VBP related data.
  *
  * E.g.: $variables['VBP']['test'] becomes

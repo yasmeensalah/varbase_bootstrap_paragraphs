@@ -5,6 +5,17 @@ namespace Drupal\varbase_bootstrap_paragraphs\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\Unicode;
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
+use Drupal\Core\Entity\ContentEntityTypeInterface;
+use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\Exception\FieldStorageDefinitionUpdateForbiddenException;
+use Drupal\Core\Entity\Schema\DynamicallyFieldableEntityStorageSchemaInterface;
+use Drupal\Core\Field\FieldException;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\field\FieldStorageConfigInterface;
 
 /**
  * Provides form for managing module settings.
@@ -54,15 +65,25 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
    * Submit Form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+
+    try {
+      // Update the Allowed list text values.
+      $newAllowedListTextValues = self::optionsExtractAllowedListTextValues($form_state->getValue('background_colors'));
+      $fieldStorage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'bp_background');
+      $fieldStorage->setSetting('allowed_values', $newAllowedListTextValues);
+      $fieldStorage->save();
+
+    }
+    catch (FieldStorageDefinitionUpdateForbiddenException $e) {
+      \Drupal::logger('varbase bootstrap paragraphs')->error($e->getMessage());
+    }
+    catch (Exception $e) {
+      \Drupal::logger('varbase bootstrap paragraphs')->error($e->getMessage());
+    }
+    
     $config = $this->config('varbase_bootstrap_paragraphs.settings');
     $config->set('background_colors', $form_state->getValue('background_colors'));
     $config->save();
-    
-    // Update the Allowed list text values.
-    $newAllowedListTextValues = self::optionsExtractAllowedListTextValues($form_state->getValue('background_colors'));
-    $fieldStorage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'bp_background');
-    $fieldStorage->setSetting('allowed_values', $newAllowedListTextValues);
-    $fieldStorage->save();
 
     parent::submitForm($form, $form_state);
   }

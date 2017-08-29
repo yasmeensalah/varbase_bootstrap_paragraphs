@@ -15,6 +15,6 @@ description: ''
 required: false
 translatable: true
 default_value: {  }
-default_value_callback: 'vbp_background_colors_allowed_values_function'
+default_value_callback: ''
 settings: {  }
 field_type: list_string
