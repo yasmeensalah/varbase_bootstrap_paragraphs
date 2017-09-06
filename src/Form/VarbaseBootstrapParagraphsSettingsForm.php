@@ -72,15 +72,18 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
       $fieldStorage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'bp_background');
       $fieldStorage->setSetting('allowed_values', $newAllowedListTextValues);
       $fieldStorage->save();
-
     }
     catch (FieldStorageDefinitionUpdateForbiddenException $e) {
-      \Drupal::logger('varbase bootstrap paragraphs')->error($e->getMessage());
+      drupal_set_message($e->getMessage(), 'error');
+      $form_state->setRebuild();
+      return;
     }
     catch (Exception $e) {
-      \Drupal::logger('varbase bootstrap paragraphs')->error($e->getMessage());
+      drupal_set_message($e->getMessage(), 'error');
+      $form_state->setRebuild();
+      return;
     }
-    
+
     $config = $this->config('varbase_bootstrap_paragraphs.settings');
     $config->set('background_colors', $form_state->getValue('background_colors'));
     $config->save();
