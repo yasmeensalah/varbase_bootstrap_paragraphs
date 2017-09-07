@@ -52,7 +52,7 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     'paragraph--width--medium' => 'col-md-8 col-md-offset-2',
     'paragraph--width--wide' => 'col-md-10 col-md-offset-1',
     'paragraph--width--full' => 'col-xs-12',
-    'bg-edge2edge' => 'bg-edge2edge col-xs-12',
+    'bg-edge2edge' => 'bg-edge2edge col-xs-12 no-padding',
   );
 
   $width = 'col-xs-12';
