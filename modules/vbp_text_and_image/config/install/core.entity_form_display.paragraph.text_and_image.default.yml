@@ -114,7 +114,7 @@ bundle: text_and_image
 mode: default
 content:
   bp_background:
-    type: options_select
+    type: options_buttons
     weight: 3
     region: content
     settings: {  }
