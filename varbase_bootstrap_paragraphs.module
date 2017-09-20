@@ -34,10 +34,11 @@ function varbase_bootstrap_paragraphs_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_paragraph().
  */
 function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
-  $paragraph = &$variables['paragraph'];
   $file_path = null;
-  if (isset($variables['paragraph']->bp_image_field->target_id)) {
+  if (isset($variables['paragraph']->bp_image_field)
+    && isset($variables['paragraph']->bp_image_field->target_id)) {
     // Get the target id and build the url.
+    $paragraph = &$variables['paragraph'];
     $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
     $file = File::load($target_id);
     $file_uri = $file->getFileUri();
@@ -45,7 +46,12 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $file_path = $style->buildUrl($file_uri);
   }
 
-  $width_value = $variables['paragraph']->bp_width->value;
+  $width_value = null;
+  if (isset($variables['paragraph']->bp_width)
+    && isset($variables['paragraph']->bp_width->value)) {
+    $width_value = $variables['paragraph']->bp_width->value;
+  }
+
   $width_map = array(
     'paragraph--width--tiny' => 'col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2',
     'paragraph--width--narrow' => 'col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1',
