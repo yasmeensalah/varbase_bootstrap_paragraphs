@@ -22,4 +22,5 @@ settings:
   plugin_types:
     block: block
   preselect_views: {  }
+  enabled_settings: {  }
 field_type: viewsreference
