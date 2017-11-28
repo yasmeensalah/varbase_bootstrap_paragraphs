@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.field.paragraph.text_and_image.bp_background
     - field.field.paragraph.text_and_image.bp_classes
-    - field.field.paragraph.text_and_image.bp_id
     - field.field.paragraph.text_and_image.bp_image_field
     - field.field.paragraph.text_and_image.bp_width
     - field.field.paragraph.text_and_image.field_image
@@ -30,14 +29,6 @@ content:
   bp_classes:
     type: string
     weight: 7
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  bp_id:
-    type: string
-    weight: 8
     region: content
     label: hidden
     settings:

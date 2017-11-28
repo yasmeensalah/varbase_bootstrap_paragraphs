@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.bp_block.bp_background
     - field.field.paragraph.bp_block.bp_block
     - field.field.paragraph.bp_block.bp_classes
-    - field.field.paragraph.bp_block.bp_id
     - field.field.paragraph.bp_block.bp_image_field
     - field.field.paragraph.bp_block.bp_width
     - paragraphs.paragraphs_type.bp_block
@@ -48,7 +47,6 @@ third_party_settings:
       children:
         - bp_width
         - bp_classes
-        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -93,14 +91,6 @@ content:
     region: content
   bp_classes:
     weight: 22
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  bp_id:
-    weight: 23
     settings:
       size: 60
       placeholder: ''

@@ -5,7 +5,6 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_view.bp_background
     - field.field.paragraph.bp_view.bp_classes
-    - field.field.paragraph.bp_view.bp_id
     - field.field.paragraph.bp_view.bp_image_field
     - field.field.paragraph.bp_view.bp_view
     - field.field.paragraph.bp_view.bp_width
@@ -62,7 +61,6 @@ third_party_settings:
       children:
         - bp_width
         - bp_classes
-        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -87,14 +85,6 @@ content:
     region: content
   bp_classes:
     weight: 22
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  bp_id:
-    weight: 23
     settings:
       size: 60
       placeholder: ''

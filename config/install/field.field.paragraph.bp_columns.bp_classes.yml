@@ -8,8 +8,8 @@ id: paragraph.bp_columns.bp_classes
 field_name: bp_classes
 entity_type: paragraph
 bundle: bp_columns
-label: Classes
-description: ''
+label: 'CSS class(es)'
+description: 'Customize the styling by adding CSS classes. Separate multiple classes by spaces.'
 required: false
 translatable: true
 default_value: {  }

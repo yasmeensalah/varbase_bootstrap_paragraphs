@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.bp_columns_two_uneven.bp_classes
     - field.field.paragraph.bp_columns_two_uneven.bp_column_content_2
     - field.field.paragraph.bp_columns_two_uneven.bp_column_style_2
-    - field.field.paragraph.bp_columns_two_uneven.bp_id
     - field.field.paragraph.bp_columns_two_uneven.bp_image_field
     - field.field.paragraph.bp_columns_two_uneven.bp_width
     - paragraphs.paragraphs_type.bp_columns_two_uneven
@@ -36,7 +35,6 @@ third_party_settings:
         - bp_width
         - bp_column_style_2
         - bp_classes
-        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -114,14 +112,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-    region: content
-  bp_id:
-    weight: 24
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   bp_image_field:
     weight: 23

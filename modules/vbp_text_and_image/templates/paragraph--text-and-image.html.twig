@@ -15,30 +15,30 @@
 
 {# Background color. #}
 {% if content.bp_background|render %}
-  {% set layout_background = content.bp_background['#items'].getString() %}
-  {% set layout_background_classes = [ layout_background ] %}
+    {% set layout_background = content.bp_background['#items'].getString() %}
+    {% set layout_background_classes = [ layout_background ] %}
 {% endif %}
 
 {# Renders Column Style field. #}
 {# Sets class name from values in database. #}
 {% if content.text_and_image_style|render %}
-  {% set fields_style = content.text_and_image_style['#items'].getString() %}
-  {% set col_1 = [
+    {% set fields_style = content.text_and_image_style['#items'].getString() %}
+    {% set col_1 = [
     'paragraph--style--50-50' == fields_style ? 'col-lg-6',
     'paragraph--style--75-25' == fields_style ? 'col-lg-9',
     'paragraph--style--66-33' == fields_style ? 'col-lg-8',
     'paragraph--style--25-75' == fields_style ? 'col-lg-3',
     'paragraph--style--33-66' == fields_style ? 'col-lg-4',
-  ]
-  %}
-  {% set col_2 = [
+    ]
+    %}
+    {% set col_2 = [
     'paragraph--style--50-50' == fields_style ? 'col-lg-6',
     'paragraph--style--75-25' == fields_style ? 'col-lg-3',
     'paragraph--style--66-33' == fields_style ? 'col-lg-4',
     'paragraph--style--25-75' == fields_style ? 'col-lg-9',
     'paragraph--style--33-66' == fields_style ? 'col-lg-8',
-  ]
-  %}
+    ]
+    %}
 {% endif %}
 
 {# The template default set classes. #}
@@ -53,7 +53,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {# Merges Background color with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
-  {% set classes = classes|merge(layout_background_classes) %}
+    {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
 {# If there is BG image it's always edge to edge #}
@@ -62,20 +62,20 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {% if VBP.background_image.url %}
-  {% set attributes = attributes.addClass('background-style') %}
+    {% set attributes = attributes.addClass('background-style') %}
 {% endif %}
 
 {# Sets Unique ID for paragraph from Paragraph ID. #}
-{% set paragraph_id = 'paragraph-' ~ paragraph.id.value %}
+{% set paragraph_id = 'vbp-' ~ paragraph.id.value %}
 
-{# Change the paragraph id if we do have a custom bp id value #}
-{% if VBP.bp_id.value %}
-    {% set paragraph_id = VBP.bp_id.value| clean_class %}
-{% endif %}
-
-{# Add custom paragraph classes if we do have bp classes value #}
+{# Add custom paragraph CSS class(es). #}
 {% if VBP.bp_classes.value %}
-    {% set attributes = attributes.addClass(VBP.bp_classes.value|striptags) %}
+  {% set striped_custom_classes = VBP.bp_classes.value|striptags|lower %}
+  {% set split_custom_classes = striped_custom_classes|split(' ') %}
+  {% for custom_class in split_custom_classes %}
+    {% set clened_custom_class = [ custom_class|clean_class ] %}
+    {% set classes = classes|merge(clened_custom_class) %}
+  {%  endfor %}
 {% endif %}
 
 {# Prints div with classes, and content. #}
@@ -83,22 +83,22 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   <div class="container">
     <div class = "row">
       <div class="{{- VBP.bp_width.value -}}">
-        {# Check the Image position field. #}
-        {% set align = content.field_image_position['#items'].getString() %}
+          {# Check the Image position field. #}
+          {% set align = content.field_image_position['#items'].getString() %}
           {% if align == "left"%}
-            {% set img_align = 'align2left' %}
-            {% set txt_align = 'align2right' %}
+              {% set img_align = 'align2left' %}
+              {% set txt_align = 'align2right' %}
           {% else %}
-            {% set img_align = 'align2right' %}
-            {% set txt_align = 'align2left' %}
+              {% set img_align = 'align2right' %}
+              {% set txt_align = 'align2left' %}
           {% endif %}
 
-        {% set image_attr = create_attribute() %}
-        {% set image_attr = image_attr.addClass('no-spacing').addClass(img_align) %}
+          {% set image_attr = create_attribute() %}
+          {% set image_attr = image_attr.addClass('no-spacing').addClass(img_align) %}
 
-        {# Set text field attributes. #}
-        {% set text_attr = create_attribute() %}
-        {% set text_attr = text_attr.addClass(txt_align).addClass('wrapper') %}
+          {# Set text field attributes. #}
+          {% set text_attr = create_attribute() %}
+          {% set text_attr = text_attr.addClass(txt_align).addClass('wrapper') %}
         <div{{ image_attr.addClass(col_1) }}>{{ content.field_image|render }}</div>
         <div{{ text_attr.addClass(col_2) }}>{{ content.field_text_content|render }}</div>
       </div>

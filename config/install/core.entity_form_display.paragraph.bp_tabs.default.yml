@@ -48,7 +48,6 @@ third_party_settings:
       children:
         - bp_width
         - bp_classes
-        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab

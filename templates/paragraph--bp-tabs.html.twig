@@ -72,11 +72,16 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Sets Unique ID for Tab from Paragraph ID. #}
-{% set paragraph_id = 'tab-' ~ paragraph.id.value %}
+{% set paragraph_id = 'vbp-tab-' ~ paragraph.id.value %}
 
-{# Add custom paragraph classes if we do have bp classes value #}
+{# Add custom paragraph CSS class(es). #}
 {% if VBP.bp_classes.value %}
-  {% set attributes = attributes.addClass(VBP.bp_classes.value|striptags) %}
+  {% set striped_custom_classes = VBP.bp_classes.value|striptags|lower %}
+  {% set split_custom_classes = striped_custom_classes|split(' ') %}
+  {% for custom_class in split_custom_classes %}
+    {% set clened_custom_class = [ custom_class|clean_class ] %}
+    {% set classes = classes|merge(clened_custom_class) %}
+  {%  endfor %}
 {% endif %}
 
 {# Prints Tabs template. #}

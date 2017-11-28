@@ -72,12 +72,6 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
   }
 
-  $custom_paragraph_id_value = null;
-  if (isset($variables['paragraph']->bp_id)
-    && isset($variables['paragraph']->bp_id->value)) {
-    $custom_paragraph_id_value = $variables['paragraph']->bp_id->value;
-  }
-
   // Add variables to template.
   _varbase_bootstrap_paragraphs_add_template_variable($variables, [
     'background_image' => [
@@ -91,10 +85,6 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     'bp_classes' => [
       'type' => 'string',
       'value' => $custom_paragraph_classes_value,
-    ],
-    'bp_id' => [
-      'type' => 'string',
-      'value' => $custom_paragraph_id_value,
     ],
   ]);
 }
