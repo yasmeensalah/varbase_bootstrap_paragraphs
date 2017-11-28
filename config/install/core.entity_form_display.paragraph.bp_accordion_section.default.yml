@@ -22,6 +22,8 @@ content:
       add_mode: modal
       form_display_mode: default
       default_paragraph_type: _none
+      closed_mode: summary
+      autocollapse: none
     third_party_settings: {  }
     region: content
   bp_accordion_section_title:

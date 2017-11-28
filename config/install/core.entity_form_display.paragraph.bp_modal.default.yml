@@ -4,6 +4,8 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_modal.bp_background
+    - field.field.paragraph.bp_modal.bp_classes
+    - field.field.paragraph.bp_modal.bp_id
     - field.field.paragraph.bp_modal.bp_image_field
     - field.field.paragraph.bp_modal.bp_modal_body
     - field.field.paragraph.bp_modal.bp_modal_button_text
@@ -30,6 +32,7 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: hidden
     group_styling_settings:
       children:
         - group_background_settings
@@ -42,6 +45,7 @@ third_party_settings:
         classes: ''
         direction: horizontal
       label: 'Styling settings'
+      region: hidden
     group_background_settings:
       children:
         - bp_background
@@ -56,9 +60,12 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Background settings'
+      region: hidden
     group_content_settings:
       children:
         - bp_width
+        - bp_classes
+        - bp_id
       parent_name: group_styling_settings
       weight: 22
       format_type: tab
@@ -69,6 +76,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Content settings'
+      region: hidden
 id: paragraph.bp_modal.default
 targetEntityType: paragraph
 bundle: bp_modal
@@ -79,6 +87,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  bp_classes:
+    weight: 25
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  bp_id:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   bp_image_field:
     weight: 22
@@ -104,6 +128,8 @@ content:
       add_mode: modal
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
     third_party_settings: {  }
     region: content
   bp_modal_button_text:
@@ -124,6 +150,8 @@ content:
       add_mode: modal
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
     third_party_settings: {  }
     region: content
   bp_modal_title:
@@ -135,7 +163,7 @@ content:
     type: string_textfield
     region: content
   bp_width:
-    weight: 21
+    weight: 24
     settings: {  }
     third_party_settings: {  }
     type: options_select

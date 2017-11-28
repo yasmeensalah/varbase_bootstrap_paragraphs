@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text_and_image.bp_background
+    - field.field.paragraph.text_and_image.bp_classes
+    - field.field.paragraph.text_and_image.bp_id
     - field.field.paragraph.text_and_image.bp_image_field
     - field.field.paragraph.text_and_image.bp_width
     - field.field.paragraph.text_and_image.field_image
@@ -25,8 +27,24 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
+  bp_classes:
+    type: string
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  bp_id:
+    type: string
+    weight: 8
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   bp_image_field:
-    weight: 13
+    weight: 6
     label: above
     settings:
       link: true
@@ -41,7 +59,7 @@ content:
     type: list_default
     region: content
   field_image:
-    weight: 12
+    weight: 5
     label: hidden
     settings:
       link: true
@@ -50,14 +68,14 @@ content:
     type: entity_reference_entity_view
     region: content
   field_image_position:
-    weight: 6
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_text_content:
-    weight: 11
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }

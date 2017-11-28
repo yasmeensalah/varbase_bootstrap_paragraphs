@@ -3,8 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_columns_two_uneven.bp_background
+    - field.field.paragraph.bp_columns_two_uneven.bp_classes
     - field.field.paragraph.bp_columns_two_uneven.bp_column_content_2
     - field.field.paragraph.bp_columns_two_uneven.bp_column_style_2
+    - field.field.paragraph.bp_columns_two_uneven.bp_id
     - field.field.paragraph.bp_columns_two_uneven.bp_image_field
     - field.field.paragraph.bp_columns_two_uneven.bp_width
     - paragraphs.paragraphs_type.bp_columns_two_uneven
@@ -23,6 +25,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  bp_classes:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   bp_column_content_2:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -39,6 +49,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  bp_id:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   bp_image_field:
     type: entity_reference_entity_view
     weight: 4

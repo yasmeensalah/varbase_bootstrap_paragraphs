@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_modal.bp_background
+    - field.field.paragraph.bp_modal.bp_classes
+    - field.field.paragraph.bp_modal.bp_id
     - field.field.paragraph.bp_modal.bp_image_field
     - field.field.paragraph.bp_modal.bp_modal_body
     - field.field.paragraph.bp_modal.bp_modal_button_text
@@ -24,6 +26,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
+  bp_classes:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_id:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   bp_image_field:
     weight: 6

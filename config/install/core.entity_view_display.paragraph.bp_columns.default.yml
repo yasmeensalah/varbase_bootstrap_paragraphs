@@ -3,7 +3,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_columns.bp_background
+    - field.field.paragraph.bp_columns.bp_classes
     - field.field.paragraph.bp_columns.bp_column_content
+    - field.field.paragraph.bp_columns.bp_id
     - field.field.paragraph.bp_columns.bp_image_field
     - field.field.paragraph.bp_columns.bp_width
     - paragraphs.paragraphs_type.bp_columns
@@ -22,6 +24,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  bp_classes:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   bp_column_content:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -31,6 +41,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  bp_id:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   bp_image_field:
     type: entity_reference_entity_view
     weight: 3

@@ -5,6 +5,8 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_block.bp_background
     - field.field.paragraph.bp_block.bp_block
+    - field.field.paragraph.bp_block.bp_classes
+    - field.field.paragraph.bp_block.bp_id
     - field.field.paragraph.bp_block.bp_image_field
     - field.field.paragraph.bp_block.bp_width
     - paragraphs.paragraphs_type.bp_block
@@ -26,6 +28,7 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: content
     group_background_settings:
       children:
         - bp_background
@@ -40,9 +43,12 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Background settings'
+      region: content
     group_content_settings:
       children:
         - bp_width
+        - bp_classes
+        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -53,6 +59,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Content settings'
+      region: content
     group_styling_settings:
       children:
         - group_background_settings
@@ -66,6 +73,7 @@ third_party_settings:
         id: ''
         classes: ''
       label: 'Styling settings'
+      region: content
 id: paragraph.bp_block.default
 targetEntityType: paragraph
 bundle: bp_block
@@ -82,6 +90,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  bp_classes:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  bp_id:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   bp_image_field:
     weight: 23

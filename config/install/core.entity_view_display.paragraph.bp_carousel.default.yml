@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_carousel.bp_background
+    - field.field.paragraph.bp_carousel.bp_classes
     - field.field.paragraph.bp_carousel.bp_slide_content
     - field.field.paragraph.bp_carousel.bp_slide_interval
     - field.field.paragraph.bp_carousel.bp_width
@@ -22,6 +23,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  bp_classes:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   bp_slide_content:
     type: entity_reference_revisions_entity_view
     weight: 0

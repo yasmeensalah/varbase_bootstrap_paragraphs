@@ -74,6 +74,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {# Sets Unique ID for Accordion from Paragraph ID. #}
 {% set paragraph_id = 'accordion-' ~ paragraph.id.value %}
 
+{# Add custom paragraph classes if we do have bp classes value #}
+{% if VBP.bp_classes.value %}
+  {% set attributes = attributes.addClass(VBP.bp_classes.value|striptags) %}
+{% endif %}
+
 {# Prints Accordion template. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   <div class="container">

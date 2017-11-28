@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.paragraph.bp_columns.bp_background
+    - field.field.paragraph.bp_columns.bp_classes
     - field.field.paragraph.bp_columns.bp_column_content
+    - field.field.paragraph.bp_columns.bp_id
     - field.field.paragraph.bp_columns.bp_image_field
     - field.field.paragraph.bp_columns.bp_width
     - paragraphs.paragraphs_type.bp_columns
   module:
-    - entity_browser
     - field_group
     - paragraphs
 third_party_settings:
@@ -27,6 +27,7 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: content
     group_styling_settings:
       children:
         - group_background_settings
@@ -40,9 +41,12 @@ third_party_settings:
         id: ''
         classes: ''
       label: 'Styling settings'
+      region: content
     group_content_settings:
       children:
         - bp_width
+        - bp_classes
+        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -53,6 +57,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Content settings'
+      region: content
     group_background_settings:
       children:
         - bp_background
@@ -67,6 +72,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Background settings'
+      region: content
 id: paragraph.bp_columns.default
 targetEntityType: paragraph
 bundle: bp_columns
@@ -78,6 +84,14 @@ content:
     third_party_settings: {  }
     type: options_buttons
     region: content
+  bp_classes:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   bp_column_content:
     type: paragraphs
     weight: 0
@@ -88,21 +102,26 @@ content:
       add_mode: modal
       form_display_mode: default
       default_paragraph_type: _none
+      closed_mode: summary
+      autocollapse: none
     third_party_settings: {  }
+    region: content
+  bp_id:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   bp_image_field:
     weight: 23
     settings:
-      entity_browser: image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: field_preview
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_browser_entity_reference
+    type: entity_reference_autocomplete
     region: content
   bp_width:
     weight: 21

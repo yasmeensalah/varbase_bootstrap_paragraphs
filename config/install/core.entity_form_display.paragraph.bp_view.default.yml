@@ -4,6 +4,8 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_view.bp_background
+    - field.field.paragraph.bp_view.bp_classes
+    - field.field.paragraph.bp_view.bp_id
     - field.field.paragraph.bp_view.bp_image_field
     - field.field.paragraph.bp_view.bp_view
     - field.field.paragraph.bp_view.bp_width
@@ -27,6 +29,7 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: content
     group_styling_settings:
       children:
         - group_background_settings
@@ -39,6 +42,7 @@ third_party_settings:
         classes: ''
         direction: horizontal
       label: 'Styling settings'
+      region: content
     group_background_settings:
       children:
         - bp_background
@@ -53,9 +57,12 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Background settings'
+      region: content
     group_content_settings:
       children:
         - bp_width
+        - bp_classes
+        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -66,6 +73,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Content settings'
+      region: content
 id: paragraph.bp_view.default
 targetEntityType: paragraph
 bundle: bp_view
@@ -76,6 +84,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  bp_classes:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  bp_id:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   bp_image_field:
     weight: 23

@@ -71,8 +71,13 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set attributes = attributes.addClass('background-style') %}
 {% endif %}
 
-{# Sets Unique ID for Accordion from Paragraph ID. #}
+{# Sets Unique ID for Tab from Paragraph ID. #}
 {% set paragraph_id = 'tab-' ~ paragraph.id.value %}
+
+{# Add custom paragraph classes if we do have bp classes value #}
+{% if VBP.bp_classes.value %}
+  {% set attributes = attributes.addClass(VBP.bp_classes.value|striptags) %}
+{% endif %}
 
 {# Prints Tabs template. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>

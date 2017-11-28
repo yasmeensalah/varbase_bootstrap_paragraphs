@@ -107,8 +107,21 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set attributes = attributes.addClass('background-style') %}
 {% endif %}
 
+{# Sets Unique ID for paragraph from Paragraph ID. #}
+{% set paragraph_id = 'paragraph-' ~ paragraph.id.value %}
+
+{# Change the paragraph id if we do have a custom bp id value #}
+{% if VBP.bp_id.value %}
+  {% set paragraph_id = VBP.bp_id.value| clean_class %}
+{% endif %}
+
+{# Add custom paragraph classes if we do have bp classes value #}
+{% if VBP.bp_classes.value %}
+  {% set attributes = attributes.addClass(VBP.bp_classes.value|striptags) %}
+{% endif %}
+
 {# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
+<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
  <div class="container">
     <div class = "row">
       <div class="{{- VBP.bp_width.value -}}">

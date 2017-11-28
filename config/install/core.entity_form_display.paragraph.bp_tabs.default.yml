@@ -4,6 +4,7 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_tabs.bp_background
+    - field.field.paragraph.bp_tabs.bp_classes
     - field.field.paragraph.bp_tabs.bp_image_field
     - field.field.paragraph.bp_tabs.bp_tab_section
     - field.field.paragraph.bp_tabs.bp_width
@@ -27,6 +28,7 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: content
     group_background_settings:
       children:
         - bp_background
@@ -41,9 +43,12 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Background settings'
+      region: content
     group_content_settings:
       children:
         - bp_width
+        - bp_classes
+        - bp_id
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -54,6 +59,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Content settings'
+      region: content
     group_styling_settings:
       children:
         - group_background_settings
@@ -66,6 +72,7 @@ third_party_settings:
         classes: ''
         direction: horizontal
       label: 'Styling settings'
+      region: content
 id: paragraph.bp_tabs.default
 targetEntityType: paragraph
 bundle: bp_tabs
@@ -76,6 +83,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  bp_classes:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   bp_image_field:
     weight: 23
@@ -101,6 +116,8 @@ content:
       add_mode: modal
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
     third_party_settings: {  }
     region: content
   bp_width:

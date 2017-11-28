@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_image.bp_background
+    - field.field.paragraph.bp_image.bp_classes
+    - field.field.paragraph.bp_image.bp_id
     - field.field.paragraph.bp_image.bp_image_field
     - field.field.paragraph.bp_image.bp_link
     - field.field.paragraph.bp_image.bp_width
@@ -22,6 +24,22 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  bp_classes:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_id:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   bp_image_field:
     type: entity_reference_entity_view
     weight: 0

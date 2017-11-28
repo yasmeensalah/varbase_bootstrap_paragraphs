@@ -4,6 +4,8 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_simple.bp_background
+    - field.field.paragraph.bp_simple.bp_classes
+    - field.field.paragraph.bp_simple.bp_id
     - field.field.paragraph.bp_simple.bp_image_field
     - field.field.paragraph.bp_simple.bp_text
     - field.field.paragraph.bp_simple.bp_width
@@ -27,11 +29,14 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: content
     group_content_settings:
       children:
         - bp_width
+        - bp_classes
+        - bp_id
       parent_name: group_styling_settings
-      weight: 20
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -40,12 +45,13 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Content settings'
+      region: content
     group_background_settings:
       children:
         - bp_background
         - bp_image_field
       parent_name: group_styling_settings
-      weight: 20
+      weight: 21
       format_type: tab
       format_settings:
         id: ''
@@ -54,6 +60,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Background settings'
+      region: content
     group_styling_settings:
       children:
         - group_background_settings
@@ -66,6 +73,7 @@ third_party_settings:
         classes: ''
         direction: horizontal
       label: 'Styling settings'
+      region: content
 id: paragraph.bp_simple.default
 targetEntityType: paragraph
 bundle: bp_simple
@@ -76,6 +84,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  bp_classes:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  bp_id:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   bp_image_field:
     weight: 23

@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_tabs.bp_background
+    - field.field.paragraph.bp_tabs.bp_classes
     - field.field.paragraph.bp_tabs.bp_image_field
     - field.field.paragraph.bp_tabs.bp_tab_section
     - field.field.paragraph.bp_tabs.bp_width
@@ -21,6 +22,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
+  bp_classes:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   bp_image_field:
     weight: 3

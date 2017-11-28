@@ -79,8 +79,13 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {# Sets Unique ID for Carousel from Paragraph ID. #}
 {% set paragraph_id = 'myCarousel-' ~ paragraph.id.value %}
 
+{# Add custom paragraph classes if we do have bp classes value #}
+{% if VBP.bp_classes.value %}
+  {% set attributes = attributes.addClass(VBP.bp_classes.value|striptags) %}
+{% endif %}
+
 {# Prints Carousel template. #}
-{{ content|without('bp_slide_content','bp_slide_interval', 'bp_width', 'bp_background') }}
+{{ content|without('bp_slide_content','bp_slide_interval', 'bp_width', 'bp_background', 'bp_classes') }}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id).setAttribute('data-interval', slide_interval_classes).setAttribute('data-ride', 'carousel') }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   {{ title_suffix }}
   <div class="container">
