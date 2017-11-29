@@ -63,7 +63,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Sets Unique ID for Modal from Paragraph ID. #}
-{% set paragraph_id = 'vbp-modal-' ~ paragraph.id.value %}
+{% set paragraph_id_modal = 'vbp-modal-' ~ paragraph.id.value %}
+{% set paragraph_id = 'vbp-' ~ paragraph.id.value %}
 
 {# If there is BG image it's always edge to edge #}
 {% if (VBP.background_image.url or content.bp_background|render) %}
@@ -85,22 +86,22 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Prints div with classes, and button to trigger the modal. #}
-<div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  <div class="container">
+<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
+  {% if VBP.do_not_remove_container.value %}<div class="container">{% endif %}
     <div class = "row">
       <div class="{{- VBP.bp_width.value -}}">
           {{ title_suffix }}
           {# Button trigger modal #}
-        <button type="button" class="btn btn-primary btn-lg btn-modal" data-toggle="modal" data-target="#{{ paragraph_id }}">
+        <button type="button" class="btn btn-primary btn-lg btn-modal" data-toggle="modal" data-target="#{{ paragraph_id_modal }}">
             {{ content.bp_modal_button_text }}
         </button>
       </div>
     </div>
-  </div>
+  {% if VBP.do_not_remove_container.value %}</div>{% endif %}
 </div>
 
 {# Modal markup with modal title, and loops for modal body and modal footer. #}
-<div class="modal fade" id="{{ paragraph_id }}" tabindex="-1" role="dialog" aria-labelledby="{{ paragraph_id }}-label" aria-hidden="true">
+<div class="modal fade" id="{{ paragraph_id_modal }}" tabindex="-1" role="dialog" aria-labelledby="{{ paragraph_id_modal }}-label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,7 +109,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
           <span aria-hidden="true">&times;</span>
         </button>
           {% if content.bp_modal_title|render %}
-            <div class="modal-title" id="{{ paragraph_id }}-label">
+            <div class="modal-title" id="{{ paragraph_id_modal }}-label">
                 {{ content.bp_modal_title }}
             </div>
           {% endif %}

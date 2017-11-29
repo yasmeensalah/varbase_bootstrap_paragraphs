@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.bp_webform.bp_background
     - field.field.paragraph.bp_webform.bp_classes
     - field.field.paragraph.bp_webform.bp_image_field
+    - field.field.paragraph.bp_webform.bp_remove_container
     - field.field.paragraph.bp_webform.bp_webform_field
     - field.field.paragraph.bp_webform.bp_width
     - paragraphs.paragraphs_type.bp_webform
@@ -60,6 +61,7 @@ third_party_settings:
       children:
         - bp_width
         - bp_classes
+        - bp_remove_container
       parent_name: group_styling_setting
       weight: 22
       format_type: tab
@@ -103,6 +105,13 @@ content:
         view_mode: field_preview
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  bp_remove_container:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   bp_webform_field:
     type: webform_entity_reference_select

@@ -5,6 +5,7 @@ dependencies:
     - field.field.paragraph.bp_tabs.bp_background
     - field.field.paragraph.bp_tabs.bp_classes
     - field.field.paragraph.bp_tabs.bp_image_field
+    - field.field.paragraph.bp_tabs.bp_remove_container
     - field.field.paragraph.bp_tabs.bp_tab_section
     - field.field.paragraph.bp_tabs.bp_width
     - paragraphs.paragraphs_type.bp_tabs
@@ -39,6 +40,16 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  bp_remove_container:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   bp_tab_section:
     type: entity_reference_revisions_entity_view

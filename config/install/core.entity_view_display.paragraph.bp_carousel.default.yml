@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.bp_carousel.bp_background
     - field.field.paragraph.bp_carousel.bp_classes
+    - field.field.paragraph.bp_carousel.bp_remove_container
     - field.field.paragraph.bp_carousel.bp_slide_content
     - field.field.paragraph.bp_carousel.bp_slide_interval
     - field.field.paragraph.bp_carousel.bp_width
@@ -30,6 +31,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  bp_remove_container:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   bp_slide_content:
     type: entity_reference_revisions_entity_view

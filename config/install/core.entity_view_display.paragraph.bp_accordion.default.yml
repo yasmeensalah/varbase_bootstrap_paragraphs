@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.bp_accordion.bp_background
     - field.field.paragraph.bp_accordion.bp_classes
     - field.field.paragraph.bp_accordion.bp_image_field
+    - field.field.paragraph.bp_accordion.bp_remove_container
     - field.field.paragraph.bp_accordion.bp_width
     - paragraphs.paragraphs_type.bp_accordion
   module:
@@ -49,6 +50,16 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+  bp_remove_container:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   bp_width:
     type: list_default
     weight: 1

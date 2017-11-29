@@ -5,6 +5,7 @@ dependencies:
     - field.field.paragraph.text_and_image.bp_background
     - field.field.paragraph.text_and_image.bp_classes
     - field.field.paragraph.text_and_image.bp_image_field
+    - field.field.paragraph.text_and_image.bp_remove_container
     - field.field.paragraph.text_and_image.bp_width
     - field.field.paragraph.text_and_image.field_image
     - field.field.paragraph.text_and_image.field_image_position
@@ -41,6 +42,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  bp_remove_container:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   bp_width:
     weight: 1

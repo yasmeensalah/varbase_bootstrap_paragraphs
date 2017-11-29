@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.bp_columns_three_uneven.bp_column_content_3
     - field.field.paragraph.bp_columns_three_uneven.bp_column_style_3
     - field.field.paragraph.bp_columns_three_uneven.bp_image_field
+    - field.field.paragraph.bp_columns_three_uneven.bp_remove_container
     - field.field.paragraph.bp_columns_three_uneven.bp_width
     - paragraphs.paragraphs_type.bp_columns_three_uneven
   module:
@@ -57,6 +58,16 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+  bp_remove_container:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   bp_width:
     type: list_default
     weight: 2

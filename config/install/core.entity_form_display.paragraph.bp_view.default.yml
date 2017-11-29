@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.bp_view.bp_background
     - field.field.paragraph.bp_view.bp_classes
     - field.field.paragraph.bp_view.bp_image_field
+    - field.field.paragraph.bp_view.bp_remove_container
     - field.field.paragraph.bp_view.bp_view
     - field.field.paragraph.bp_view.bp_width
     - paragraphs.paragraphs_type.bp_view
@@ -61,6 +62,7 @@ third_party_settings:
       children:
         - bp_width
         - bp_classes
+        - bp_remove_container
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -104,6 +106,13 @@ content:
         view_mode: field_preview
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  bp_remove_container:
+    weight: 23
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   bp_view:
     weight: 0

@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.bp_block.bp_block
     - field.field.paragraph.bp_block.bp_classes
     - field.field.paragraph.bp_block.bp_image_field
+    - field.field.paragraph.bp_block.bp_remove_container
     - field.field.paragraph.bp_block.bp_width
     - paragraphs.paragraphs_type.bp_block
   module:
@@ -47,6 +48,16 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  bp_remove_container:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   bp_width:
     weight: 1

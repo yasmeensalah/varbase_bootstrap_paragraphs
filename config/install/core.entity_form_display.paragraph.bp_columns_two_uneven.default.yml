@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.bp_columns_two_uneven.bp_column_content_2
     - field.field.paragraph.bp_columns_two_uneven.bp_column_style_2
     - field.field.paragraph.bp_columns_two_uneven.bp_image_field
+    - field.field.paragraph.bp_columns_two_uneven.bp_remove_container
     - field.field.paragraph.bp_columns_two_uneven.bp_width
     - paragraphs.paragraphs_type.bp_columns_two_uneven
   module:
@@ -35,6 +36,7 @@ third_party_settings:
         - bp_width
         - bp_column_style_2
         - bp_classes
+        - bp_remove_container
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
@@ -126,6 +128,13 @@ content:
         view_mode: field_preview
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  bp_remove_container:
+    weight: 24
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   bp_width:
     weight: 21

@@ -109,7 +109,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  <div class="container">
+  {% if VBP.do_not_remove_container.value %}<div class="container">{% endif %}
     <div class = "row">
       <div class="{{- VBP.bp_width.value -}}">
         {% for key, item in content.bp_column_content_2 if key|first != '#' %}
@@ -129,5 +129,5 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {% endfor %}
       </div>
     </div>
-  </div>
+  {% if VBP.do_not_remove_container.value %}</div>{% endif %}
 </div>

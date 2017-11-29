@@ -5,6 +5,7 @@ dependencies:
     - field.field.paragraph.bp_simple.bp_background
     - field.field.paragraph.bp_simple.bp_classes
     - field.field.paragraph.bp_simple.bp_image_field
+    - field.field.paragraph.bp_simple.bp_remove_container
     - field.field.paragraph.bp_simple.bp_text
     - field.field.paragraph.bp_simple.bp_width
     - paragraphs.paragraphs_type.bp_simple
@@ -39,6 +40,16 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  bp_remove_container:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   bp_text:
     weight: 0

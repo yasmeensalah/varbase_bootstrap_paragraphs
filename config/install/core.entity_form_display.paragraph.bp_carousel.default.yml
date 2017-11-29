@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.bp_carousel.bp_background
     - field.field.paragraph.bp_carousel.bp_classes
+    - field.field.paragraph.bp_carousel.bp_remove_container
     - field.field.paragraph.bp_carousel.bp_slide_content
     - field.field.paragraph.bp_carousel.bp_slide_interval
     - field.field.paragraph.bp_carousel.bp_width
@@ -45,6 +46,7 @@ third_party_settings:
       children:
         - bp_width
         - bp_classes
+        - bp_remove_container
       parent_name: group_styling_settings
       weight: 22
       format_type: tab
@@ -87,6 +89,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  bp_remove_container:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   bp_slide_content:
     type: paragraphs

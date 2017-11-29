@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.bp_image.bp_classes
     - field.field.paragraph.bp_image.bp_image_field
     - field.field.paragraph.bp_image.bp_link
+    - field.field.paragraph.bp_image.bp_remove_container
     - field.field.paragraph.bp_image.bp_width
     - paragraphs.paragraphs_type.bp_image
   module:
@@ -52,6 +53,16 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
+  bp_remove_container:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   bp_width:
     type: list_default
     weight: 1
