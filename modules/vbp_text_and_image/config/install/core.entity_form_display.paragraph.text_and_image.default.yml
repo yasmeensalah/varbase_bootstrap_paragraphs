@@ -34,41 +34,43 @@ third_party_settings:
       region: content
     group_background_settings:
       children:
-        - bp_image_field
         - bp_background
+        - bp_image_field
+        - field_image_position
+        - text_and_image_style
+        - bp_classes
+        - bp_remove_container
       parent_name: group_styling_setting
-      weight: 1
+      weight: 3
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Styling
         formatter: open
         description: ''
-        required_fields: true
-      label: 'Background settings'
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Styling
       region: content
     group_content_settings:
       children:
-        - field_image_position
-        - text_and_image_style
         - bp_width
-        - bp_classes
-        - bp_remove_container
       parent_name: group_styling_setting
       weight: 2
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Content
         formatter: open
         description: ''
-        required_fields: true
-      label: 'Content settings'
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Content
       region: content
     group_styling_setting:
       children:
-        - group_background_settings
         - group_content_settings
+        - group_background_settings
       parent_name: group_styling_settings
       weight: 2
       format_type: tabs
@@ -132,14 +134,14 @@ content:
     third_party_settings: {  }
   bp_classes:
     type: string_textfield
-    weight: 7
+    weight: 6
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   bp_image_field:
-    weight: 1
+    weight: 3
     settings:
       entity_browser: image_browser
       field_widget_display: rendered_entity
@@ -153,7 +155,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   bp_remove_container:
-    weight: 8
+    weight: 7
     settings:
       display_label: true
     third_party_settings: {  }

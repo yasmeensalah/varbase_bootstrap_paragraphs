@@ -33,37 +33,39 @@ third_party_settings:
       children:
         - bp_background
         - bp_image_field
+        - bp_classes
+        - bp_remove_container
       parent_name: group_styling_settings
-      weight: 20
+      weight: 22
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Styling
         formatter: open
         description: ''
-        required_fields: true
-      label: 'Background settings'
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Styling
       region: content
     group_content_settings:
       children:
         - bp_width
-        - bp_classes
-        - bp_remove_container
       parent_name: group_styling_settings
       weight: 21
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Content
         formatter: open
         description: ''
-        required_fields: true
-      label: 'Content settings'
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Content
       region: content
     group_styling_settings:
       children:
-        - group_background_settings
         - group_content_settings
+        - group_background_settings
       parent_name: group_advanced
       weight: 20
       format_type: tabs
@@ -92,7 +94,7 @@ content:
     type: options_select
     region: content
   bp_classes:
-    weight: 22
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -114,7 +116,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   bp_remove_container:
-    weight: 23
+    weight: 25
     settings:
       display_label: true
     third_party_settings: {  }
