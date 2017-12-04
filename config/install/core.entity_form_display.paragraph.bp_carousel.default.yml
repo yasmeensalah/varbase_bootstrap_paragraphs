@@ -52,12 +52,13 @@ third_party_settings:
       weight: 22
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Content
         formatter: open
         description: ''
-        required_fields: true
-      label: 'Content settings'
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Content
       region: content
     group_styling_settings:
       children:
