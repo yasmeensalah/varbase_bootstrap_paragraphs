@@ -35,7 +35,6 @@ third_party_settings:
       children:
         - bp_background
         - bp_image_field
-        - bp_column_style_3
         - bp_classes
         - bp_remove_container
       parent_name: group_styling_settings
@@ -53,6 +52,7 @@ third_party_settings:
     group_content_settings:
       children:
         - bp_width
+        - bp_column_style_3
       parent_name: group_styling_settings
       weight: 22
       format_type: tab
@@ -112,7 +112,7 @@ content:
     third_party_settings: {  }
     region: content
   bp_column_style_3:
-    weight: 24
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: options_select

@@ -55,12 +55,13 @@ third_party_settings:
       weight: 22
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Styling
         formatter: open
         description: ''
-        required_fields: true
-      label: 'Background settings'
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Styling
       region: content
     group_styling_settings:
       children:
