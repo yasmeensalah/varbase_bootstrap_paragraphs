@@ -9,7 +9,7 @@ field_name: bp_remove_container
 entity_type: paragraph
 bundle: bp_columns
 label: 'Remove container'
-description: 'Check if you want to remove the container tag. mostly check this option for nested components to remove getters of padding and margins'
+description: 'Check only if you want to remove the container tag. mostly check this option for nested components to remove getters of padding and margins.'
 required: false
 translatable: true
 default_value:
