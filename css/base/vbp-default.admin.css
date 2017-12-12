@@ -76,6 +76,480 @@
   left: 0;
   right: -5px;
 }
+.field--name-bp-width .form-type-radio input {
+  visibility: hidden;
+  position: absolute;
+}
+.field--name-bp-width .form-type-radio input:checked + label {
+  border: #000000 2px solid;
+}
+.field--name-bp-width .form-type-radio label {
+  cursor: pointer !important;
+  font-size: 62%;
+  text-align: center;
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 45px!important;
+  float: left !important;
+  margin: 10px 10px 10px 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  border: #000000 1px solid;
+}
+.field--name-bp-width .form-type-radio label:after {
+  content: '';
+  display: table;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  z-index: 1;
+  font-size: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.field--name-bp-width .form-type-radio label._none {
+  background: #ffffff !important;
+}
+.field--name-bp-width .form-type-radio label._none:after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  cursor: pointer !important;
+  opacity: 1;
+  top: 12px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: clip;
+  background: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+[dir=rtl] .field--name-bp-width .form-type-radio label {
+  float: right !important;
+}
+[dir=rtl] .field--name-bp-width .form-type-radio label._none:after {
+  left: 0;
+  right: -5px;
+}
+.field--name-bp-gutter .form-type-radio input {
+  visibility: hidden;
+  position: absolute;
+}
+.field--name-bp-gutter .form-type-radio input:checked + label {
+  border: #000000 2px solid;
+}
+.field--name-bp-gutter .form-type-radio label {
+  cursor: pointer !important;
+  font-size: 62%;
+  text-align: center;
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 45px!important;
+  float: left !important;
+  margin: 10px 10px 10px 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  border: #000000 1px solid;
+}
+.field--name-bp-gutter .form-type-radio label:after {
+  content: '';
+  display: table;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  z-index: 1;
+  font-size: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.field--name-bp-gutter .form-type-radio label._none {
+  background: #ffffff !important;
+}
+.field--name-bp-gutter .form-type-radio label._none:after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  cursor: pointer !important;
+  opacity: 1;
+  top: 12px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: clip;
+  background: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+[dir=rtl] .field--name-bp-gutter .form-type-radio label {
+  float: right !important;
+}
+[dir=rtl] .field--name-bp-gutter .form-type-radio label._none:after {
+  left: 0;
+  right: -5px;
+}
+.field--name-bp-column-style-3 .form-type-radio input {
+  visibility: hidden;
+  position: absolute;
+}
+.field--name-bp-column-style-3 .form-type-radio input:checked + label {
+  border: #000000 2px solid;
+}
+.field--name-bp-column-style-3 .form-type-radio label {
+  cursor: pointer !important;
+  font-size: 62%;
+  text-align: center;
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 45px!important;
+  float: left !important;
+  margin: 10px 10px 10px 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  border: #000000 1px solid;
+}
+.field--name-bp-column-style-3 .form-type-radio label:after {
+  content: '';
+  display: table;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  z-index: 1;
+  font-size: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.field--name-bp-column-style-3 .form-type-radio label._none {
+  background: #ffffff !important;
+}
+.field--name-bp-column-style-3 .form-type-radio label._none:after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  cursor: pointer !important;
+  opacity: 1;
+  top: 12px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: clip;
+  background: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+[dir=rtl] .field--name-bp-column-style-3 .form-type-radio label {
+  float: right !important;
+}
+[dir=rtl] .field--name-bp-column-style-3 .form-type-radio label._none:after {
+  left: 0;
+  right: -5px;
+}
+.field--name-bp-column-style-2 .form-type-radio input {
+  visibility: hidden;
+  position: absolute;
+}
+.field--name-bp-column-style-2 .form-type-radio input:checked + label {
+  border: #000000 2px solid;
+}
+.field--name-bp-column-style-2 .form-type-radio label {
+  cursor: pointer !important;
+  font-size: 62%;
+  text-align: center;
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 45px!important;
+  float: left !important;
+  margin: 10px 10px 10px 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  border: #000000 1px solid;
+}
+.field--name-bp-column-style-2 .form-type-radio label:after {
+  content: '';
+  display: table;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  z-index: 1;
+  font-size: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.field--name-bp-column-style-2 .form-type-radio label._none {
+  background: #ffffff !important;
+}
+.field--name-bp-column-style-2 .form-type-radio label._none:after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  cursor: pointer !important;
+  opacity: 1;
+  top: 12px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: clip;
+  background: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+[dir=rtl] .field--name-bp-column-style-2 .form-type-radio label {
+  float: right !important;
+}
+[dir=rtl] .field--name-bp-column-style-2 .form-type-radio label._none:after {
+  left: 0;
+  right: -5px;
+}
+.field--name-text-and-image-style .form-type-radio input {
+  visibility: hidden;
+  position: absolute;
+}
+.field--name-text-and-image-style .form-type-radio input:checked + label {
+  border: #000000 2px solid;
+}
+.field--name-text-and-image-style .form-type-radio label {
+  cursor: pointer !important;
+  font-size: 62%;
+  text-align: center;
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 45px!important;
+  float: left !important;
+  margin: 10px 10px 10px 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  border: #000000 1px solid;
+}
+.field--name-text-and-image-style .form-type-radio label:after {
+  content: '';
+  display: table;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  z-index: 1;
+  font-size: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.field--name-text-and-image-style .form-type-radio label._none {
+  background: #ffffff !important;
+}
+.field--name-text-and-image-style .form-type-radio label._none:after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  cursor: pointer !important;
+  opacity: 1;
+  top: 12px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: clip;
+  background: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+[dir=rtl] .field--name-text-and-image-style .form-type-radio label {
+  float: right !important;
+}
+[dir=rtl] .field--name-text-and-image-style .form-type-radio label._none:after {
+  left: 0;
+  right: -5px;
+}
+.field--name-field-image-position .form-type-radio input {
+  visibility: hidden;
+  position: absolute;
+}
+.field--name-field-image-position .form-type-radio input:checked + label {
+  border: #000000 2px solid;
+}
+.field--name-field-image-position .form-type-radio label {
+  cursor: pointer !important;
+  font-size: 62%;
+  text-align: center;
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 45px!important;
+  float: left !important;
+  margin: 10px 10px 10px 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  border: #000000 1px solid;
+}
+.field--name-field-image-position .form-type-radio label:after {
+  content: '';
+  display: table;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  z-index: 1;
+  font-size: 20px !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.field--name-field-image-position .form-type-radio label._none {
+  background: #ffffff !important;
+}
+.field--name-field-image-position .form-type-radio label._none:after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  cursor: pointer !important;
+  opacity: 1;
+  top: 12px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: clip;
+  background: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+[dir=rtl] .field--name-field-image-position .form-type-radio label {
+  float: right !important;
+}
+[dir=rtl] .field--name-field-image-position .form-type-radio label._none:after {
+  left: 0;
+  right: -5px;
+}
 .paragraph--view-mode--preview .field--name-bp-image-field img {
   width: 100%;
 }

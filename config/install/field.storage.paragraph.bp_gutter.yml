@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.bp_remove_container
-field_name: bp_remove_container
+id: paragraph.bp_gutter
+field_name: bp_gutter
 entity_type: paragraph
 type: boolean
 settings: {  }

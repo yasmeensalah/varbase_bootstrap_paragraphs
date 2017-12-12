@@ -5,8 +5,8 @@ dependencies:
     - field.field.paragraph.bp_block.bp_background
     - field.field.paragraph.bp_block.bp_block
     - field.field.paragraph.bp_block.bp_classes
+    - field.field.paragraph.bp_block.bp_gutter
     - field.field.paragraph.bp_block.bp_image_field
-    - field.field.paragraph.bp_block.bp_remove_container
     - field.field.paragraph.bp_block.bp_width
     - paragraphs.paragraphs_type.bp_block
   module:
@@ -40,16 +40,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  bp_image_field:
-    weight: 3
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  bp_remove_container:
+  bp_gutter:
     weight: 5
     label: above
     settings:
@@ -58,6 +49,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  bp_image_field:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   bp_width:
     weight: 1

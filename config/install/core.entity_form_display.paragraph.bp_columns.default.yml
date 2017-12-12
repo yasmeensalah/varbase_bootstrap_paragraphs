@@ -6,8 +6,8 @@ dependencies:
     - field.field.paragraph.bp_columns.bp_background
     - field.field.paragraph.bp_columns.bp_classes
     - field.field.paragraph.bp_columns.bp_column_content
+    - field.field.paragraph.bp_columns.bp_gutter
     - field.field.paragraph.bp_columns.bp_image_field
-    - field.field.paragraph.bp_columns.bp_remove_container
     - field.field.paragraph.bp_columns.bp_width
     - paragraphs.paragraphs_type.bp_columns
   module:
@@ -18,7 +18,11 @@ third_party_settings:
   field_group:
     group_advanced:
       children:
-        - group_styling_settings
+        - bp_width
+        - bp_gutter
+        - bp_background
+        - bp_image_field
+        - bp_classes
       parent_name: ''
       weight: 1
       format_type: details
@@ -30,66 +34,19 @@ third_party_settings:
         open: false
       label: 'Styling settings'
       region: content
-    group_styling_settings:
-      children:
-        - group_content_settings
-        - group_background_settings
-      parent_name: group_advanced
-      weight: 20
-      format_type: tabs
-      format_settings:
-        label: 'Styling settings'
-        direction: horizontal
-        id: ''
-        classes: ''
-      label: 'Styling settings'
-      region: content
-    group_content_settings:
-      children:
-        - bp_width
-      parent_name: group_styling_settings
-      weight: 21
-      format_type: tab
-      format_settings:
-        label: Content
-        formatter: open
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Content
-      region: content
-    group_background_settings:
-      children:
-        - bp_background
-        - bp_image_field
-        - bp_classes
-        - bp_remove_container
-      parent_name: group_styling_settings
-      weight: 22
-      format_type: tab
-      format_settings:
-        label: Styling
-        formatter: open
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Styling
-      region: content
 id: paragraph.bp_columns.default
 targetEntityType: paragraph
 bundle: bp_columns
 mode: default
 content:
   bp_background:
-    weight: 22
+    weight: 23
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   bp_classes:
-    weight: 24
+    weight: 25
     settings:
       size: 60
       placeholder: ''
@@ -110,8 +67,14 @@ content:
       autocollapse: none
     third_party_settings: {  }
     region: content
+  bp_gutter:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   bp_image_field:
-    weight: 23
+    weight: 24
     settings:
       entity_browser: image_browser
       field_widget_display: rendered_entity
@@ -124,18 +87,11 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  bp_remove_container:
-    weight: 25
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   bp_width:
     weight: 21
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
 hidden:
   created: true

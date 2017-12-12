@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_gutter
+    - paragraphs.paragraphs_type.bp_image
+id: paragraph.bp_image.bp_gutter
+field_name: bp_gutter
+entity_type: paragraph
+bundle: bp_image
+label: Gutter
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Have Gutter'
+  off_label: 'No Gutter'
+field_type: boolean

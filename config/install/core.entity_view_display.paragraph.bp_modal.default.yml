@@ -4,12 +4,12 @@ dependencies:
   config:
     - field.field.paragraph.bp_modal.bp_background
     - field.field.paragraph.bp_modal.bp_classes
+    - field.field.paragraph.bp_modal.bp_gutter
     - field.field.paragraph.bp_modal.bp_image_field
     - field.field.paragraph.bp_modal.bp_modal_body
     - field.field.paragraph.bp_modal.bp_modal_button_text
     - field.field.paragraph.bp_modal.bp_modal_footer
     - field.field.paragraph.bp_modal.bp_modal_title
-    - field.field.paragraph.bp_modal.bp_remove_container
     - field.field.paragraph.bp_modal.bp_width
     - paragraphs.paragraphs_type.bp_modal
   module:
@@ -34,6 +34,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  bp_gutter:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   bp_image_field:
     weight: 6
@@ -77,16 +87,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  bp_remove_container:
-    weight: 8
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   bp_width:
     weight: 4

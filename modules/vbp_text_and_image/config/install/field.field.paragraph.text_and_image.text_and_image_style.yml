@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: text_and_image
 label: 'Fields style'
 description: ''
-required: false
+required: true
 translatable: true
 default_value:
   -

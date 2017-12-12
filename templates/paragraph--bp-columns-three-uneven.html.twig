@@ -98,9 +98,18 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
+{# No container by default. #}
+{% set add_container = false %}
+
 {# If there is BG image it's always edge to edge #}
 {% if (VBP.background_image.url or content.bp_background|render) %}
     {% set attributes = attributes.addClass('bg-edge2edge') %}
+    {% set add_container = true %}
+{% endif %}
+
+{# If gutter option were selected. #}
+{% if VBP.bp_gutter.value %}
+  {% set add_container = true %}
 {% endif %}
 
 {% if VBP.background_image.url %}
@@ -122,7 +131,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  {% if VBP.do_not_remove_container.value %}<div class="container">{% endif %}
+  {% if VBP.add_container %}<div class="container">{% endif %}
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
         {% for key, item in content.bp_column_content_3 if key|first != '#' %}
@@ -147,5 +156,5 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {% endfor %}
       </div>
     </div>
-  {% if VBP.do_not_remove_container.value %}</div>{% endif %}
+  {% if VBP.add_container %}</div>{% endif %}
 </div>

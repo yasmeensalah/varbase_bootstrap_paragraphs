@@ -72,10 +72,10 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
         $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
     }
 
-    $remove_container_value = FALSE;
-    if (isset($variables['paragraph']->bp_remove_container)
-        && isset($variables['paragraph']->bp_remove_container->value)) {
-        $remove_container_value = $variables['paragraph']->bp_remove_container->value;
+    $gutter_value = FALSE;
+    if (isset($variables['paragraph']->bp_gutter)
+        && isset($variables['paragraph']->bp_gutter->value)) {
+        $gutter_value = $variables['paragraph']->bp_gutter->value;
     }
 
     // Add variables to template.
@@ -92,9 +92,9 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
             'type' => 'string',
             'value' => $custom_paragraph_classes_value,
         ],
-        'do_not_remove_container' => [
+        'bp_gutter' => [
             'type' => 'bool',
-            'value' => !$remove_container_value,
+            'value' => $gutter_value,
         ],
     ]);
 }

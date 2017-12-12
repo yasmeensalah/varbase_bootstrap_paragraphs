@@ -5,8 +5,8 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.bp_webform.bp_background
     - field.field.paragraph.bp_webform.bp_classes
+    - field.field.paragraph.bp_webform.bp_gutter
     - field.field.paragraph.bp_webform.bp_image_field
-    - field.field.paragraph.bp_webform.bp_remove_container
     - field.field.paragraph.bp_webform.bp_webform_field
     - field.field.paragraph.bp_webform.bp_width
     - paragraphs.paragraphs_type.bp_webform
@@ -18,7 +18,11 @@ third_party_settings:
   field_group:
     group_styling_settings:
       children:
-        - group_styling_setting
+        - bp_width
+        - bp_gutter
+        - bp_background
+        - bp_image_field
+        - bp_classes
       parent_name: ''
       weight: 20
       format_type: details
@@ -29,73 +33,33 @@ third_party_settings:
         required_fields: true
       label: 'Styling settings'
       region: content
-    group_styling_setting:
-      children:
-        - group_content_settings_
-        - group_background_settings
-      parent_name: group_styling_settings
-      weight: 20
-      format_type: tabs
-      format_settings:
-        id: ''
-        classes: ''
-        direction: horizontal
-      label: Styling_settings
-      region: content
-    group_background_settings:
-      children:
-        - bp_background
-        - bp_image_field
-        - bp_classes
-        - bp_remove_container
-      parent_name: group_styling_setting
-      weight: 23
-      format_type: tab
-      format_settings:
-        label: Styling
-        formatter: open
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Styling
-      region: content
-    group_content_settings_:
-      children:
-        - bp_width
-      parent_name: group_styling_setting
-      weight: 22
-      format_type: tab
-      format_settings:
-        label: Content
-        formatter: open
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Content
-      region: content
 id: paragraph.bp_webform.default
 targetEntityType: paragraph
 bundle: bp_webform
 mode: default
 content:
   bp_background:
-    weight: 1
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   bp_classes:
-    weight: 3
+    weight: 28
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  bp_gutter:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   bp_image_field:
-    weight: 2
+    weight: 27
     settings:
       entity_browser: image_browser
       field_widget_display: rendered_entity
@@ -108,24 +72,18 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  bp_remove_container:
-    weight: 4
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   bp_webform_field:
     type: webform_entity_reference_select
     weight: 0
     region: content
-    settings: {  }
+    settings:
+      default_data: true
     third_party_settings: {  }
   bp_width:
     weight: 24
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
 hidden:
   created: true

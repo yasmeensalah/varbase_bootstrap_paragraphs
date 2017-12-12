@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.bp_carousel.bp_background
     - field.field.paragraph.bp_carousel.bp_classes
-    - field.field.paragraph.bp_carousel.bp_remove_container
+    - field.field.paragraph.bp_carousel.bp_gutter
     - field.field.paragraph.bp_carousel.bp_slide_content
     - field.field.paragraph.bp_carousel.bp_slide_interval
     - field.field.paragraph.bp_carousel.bp_width
@@ -32,7 +32,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  bp_remove_container:
+  bp_gutter:
     weight: 5
     label: above
     settings:

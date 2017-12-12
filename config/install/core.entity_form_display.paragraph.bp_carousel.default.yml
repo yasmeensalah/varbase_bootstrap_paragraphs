@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.bp_carousel.bp_background
     - field.field.paragraph.bp_carousel.bp_classes
-    - field.field.paragraph.bp_carousel.bp_remove_container
+    - field.field.paragraph.bp_carousel.bp_gutter
     - field.field.paragraph.bp_carousel.bp_slide_content
     - field.field.paragraph.bp_carousel.bp_slide_interval
     - field.field.paragraph.bp_carousel.bp_width
@@ -16,7 +16,10 @@ third_party_settings:
   field_group:
     group_advanced:
       children:
-        - group_styling_settings
+        - bp_width
+        - bp_gutter
+        - bp_background
+        - bp_classes
       parent_name: ''
       weight: 2
       format_type: details
@@ -28,76 +31,30 @@ third_party_settings:
         open: false
       label: 'Styling settings'
       region: content
-    group_background_settings:
-      children:
-        - bp_background
-        - bp_classes
-        - bp_remove_container
-      parent_name: group_styling_settings
-      weight: 23
-      format_type: tab
-      format_settings:
-        label: Styling
-        formatter: open
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Styling
-      region: content
-    group_content_settings:
-      children:
-        - bp_width
-      parent_name: group_styling_settings
-      weight: 22
-      format_type: tab
-      format_settings:
-        label: Content
-        formatter: open
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Content
-      region: content
-    group_styling_settings:
-      children:
-        - group_content_settings
-        - group_background_settings
-      parent_name: group_advanced
-      weight: 20
-      format_type: tabs
-      format_settings:
-        id: ''
-        classes: ''
-        direction: horizontal
-      label: 'Styling settings'
-      region: content
 id: paragraph.bp_carousel.default
 targetEntityType: paragraph
 bundle: bp_carousel
 mode: default
 content:
   bp_background:
-    weight: 3
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   bp_classes:
-    weight: 4
+    weight: 7
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  bp_remove_container:
+  bp_gutter:
     weight: 5
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings: {  }
-    type: boolean_checkbox
+    type: options_buttons
     region: content
   bp_slide_content:
     type: paragraphs
@@ -123,7 +80,7 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
 hidden:
   created: true
