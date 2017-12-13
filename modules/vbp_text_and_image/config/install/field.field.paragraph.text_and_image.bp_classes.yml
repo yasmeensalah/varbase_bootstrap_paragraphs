@@ -9,7 +9,7 @@ field_name: bp_classes
 entity_type: paragraph
 bundle: text_and_image
 label: 'CSS class(es)'
-description: 'Customize the styling by adding CSS classes. Separate multiple classes by spaces.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
