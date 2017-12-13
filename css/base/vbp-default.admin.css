@@ -89,7 +89,6 @@
 .field--name-field-image-position .form-type-radio input:checked + label {
   -webkit-filter: invert(25%) sepia(0.9);
   filter: invert(25%) sepia(0.9);
-  font-weight: bold;
 }
 .field--name-bp-width .form-type-radio label,
 .field--name-bp-gutter .form-type-radio label,
@@ -98,12 +97,12 @@
 .field--name-text-and-image-style .form-type-radio label,
 .field--name-field-image-position .form-type-radio label {
   cursor: pointer !important;
-  font-size: 62%;
+  font-size: 75%;
   text-align: center;
   position: relative !important;
   display: inline-block !important;
-  width: 50px !important;
-  height: 20px!important;
+  min-width: 50px !important;
+  height: 20px !important;
   float: left !important;
   margin: 10px 10px 10px 0 !important;
   padding: 40px 0px 0 !important;
@@ -147,6 +146,7 @@
 .field--name-bp-width .form-type-radio label.option.paragraph--width--full,
 .field--name-bp-width .form-type-radio label.option.bg-edge2edge {
   background-image: none;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .field--name-bp-width .form-type-radio label.option.paragraph--width--tiny {
@@ -170,6 +170,7 @@
 .field--name-bp-gutter .form-type-radio label.option.gutter-0,
 .field--name-bp-gutter .form-type-radio label.option.gutter-1 {
   background-image: none;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .field--name-bp-gutter .form-type-radio label.option.gutter-0 {
@@ -185,6 +186,7 @@
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--66-16-16,
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66 {
   background-image: none;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-50-25 {
@@ -210,6 +212,7 @@
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--25-75,
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66 {
   background-image: none;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25 {
@@ -230,6 +233,7 @@
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--25-75,
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66 {
   background-image: none;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--50-50 {
@@ -250,6 +254,7 @@
 .field--name-field-image-position .form-type-radio label.option.right,
 .field--name-field-image-position .form-type-radio label.option.left {
   background-image: none;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 .field--name-field-image-position .form-type-radio label.option.right {
