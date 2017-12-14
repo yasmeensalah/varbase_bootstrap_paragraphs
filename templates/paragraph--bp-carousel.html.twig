@@ -102,7 +102,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {{ content|without('bp_slide_content','bp_slide_interval', 'bp_width', 'bp_background', 'bp_classes', 'bp_gutter') }}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id).setAttribute('data-interval', slide_interval_classes).setAttribute('data-ride', 'carousel') }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   {{ title_suffix }}
-  {% if VBP.add_container %}<div class="container">{% endif %}
+  {% if add_container %}<div class="container">{% endif %}
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
         <ol class="carousel-indicators">
@@ -125,5 +125,5 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         </a>
       </div>
     </div>
-  {% if VBP.add_container %}</div>{% endif %}
+  {% if add_container %}</div>{% endif %}
 </div>

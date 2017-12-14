@@ -88,7 +88,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class
 
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes).addClass(layout_background_classes).setAttribute('id', paragraph_id) }}>
-  {% if VBP.add_container %}<div class="container">{% endif %}
+  {% if add_container %}<div class="container">{% endif %}
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
           {% if content.bp_link|render is not empty %}
@@ -100,5 +100,5 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class
           {% endif %}
       </div>
     </div>
-  {% if VBP.add_container %}</div>{% endif %}
+  {% if add_container %}</div>{% endif %}
 </div>
