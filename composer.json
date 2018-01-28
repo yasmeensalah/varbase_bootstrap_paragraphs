@@ -3,7 +3,7 @@
   "description": "Varbase Bootstrap Paragraphs : A suite of Paragraph bundles to be used for Varbase distribution. Made with the Boostrap framework, based on a fork of Bootstrap Paragraph module (bootstrap_paragraphs).",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/varbase_bootstrap_paragraphs",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "authors": [
     {
