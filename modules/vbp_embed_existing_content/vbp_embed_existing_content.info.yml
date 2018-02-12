@@ -12,10 +12,10 @@ dependencies:
   - node
   - options
   - paragraphs
+  - varbase_blog
   - varbase_bootstrap_paragraphs
   - varbase_landing
   - varbase_media
   - varbase_page
-  - vbp_embed_existing_content
 version: 8.x-4.x-dev
 package: Varbase

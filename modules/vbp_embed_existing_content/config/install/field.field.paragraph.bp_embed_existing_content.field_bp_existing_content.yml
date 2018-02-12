@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_bp_existing_content
     - node.type.page
+    - node.type.varbase_blog
     - paragraphs.paragraphs_type.bp_embed_existing_content
 id: paragraph.bp_embed_existing_content.field_bp_existing_content
 field_name: field_bp_existing_content
@@ -20,8 +21,9 @@ settings:
   handler_settings:
     target_bundles:
       page: page
+      varbase_blog: varbase_blog
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: page
 field_type: entity_reference
