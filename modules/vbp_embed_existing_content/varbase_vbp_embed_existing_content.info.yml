@@ -1,0 +1,21 @@
+name: 'Varbase Bootstrap Paragraphs Embed Existing Content'
+description: 'Embed Existing Content'
+type: module
+core: 8.x
+dependencies:
+  - ds
+  - entity_browser
+  - entity_reference_display
+  - entity_reference_revisions
+  - field
+  - field_group
+  - node
+  - options
+  - paragraphs
+  - varbase_bootstrap_paragraphs
+  - varbase_landing
+  - varbase_media
+  - varbase_page
+  - vbp_embed_existing_content
+version: 8.x-4.x-dev
+package: Varbase

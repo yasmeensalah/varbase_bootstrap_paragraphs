@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bp_content_view_mode
+    - paragraphs.paragraphs_type.bp_embed_existing_content
+  module:
+    - entity_reference_display
+id: paragraph.bp_embed_existing_content.field_bp_content_view_mode
+field_name: field_bp_content_view_mode
+entity_type: paragraph
+bundle: bp_embed_existing_content
+label: 'Content view mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  exclude: {  }
+field_type: entity_reference_display

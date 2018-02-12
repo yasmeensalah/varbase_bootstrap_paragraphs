@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_width
+    - paragraphs.paragraphs_type.bp_embed_existing_content
+  module:
+    - options
+id: paragraph.bp_embed_existing_content.bp_width
+field_name: bp_width
+entity_type: paragraph
+bundle: bp_embed_existing_content
+label: Width
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: paragraph--width--full
+default_value_callback: ''
+settings: {  }
+field_type: list_string

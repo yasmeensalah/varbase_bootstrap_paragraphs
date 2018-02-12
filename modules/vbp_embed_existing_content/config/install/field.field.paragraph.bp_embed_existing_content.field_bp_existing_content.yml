@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bp_existing_content
+    - node.type.page
+    - paragraphs.paragraphs_type.bp_embed_existing_content
+id: paragraph.bp_embed_existing_content.field_bp_existing_content
+field_name: field_bp_existing_content
+entity_type: paragraph
+bundle: bp_embed_existing_content
+label: 'Existing content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

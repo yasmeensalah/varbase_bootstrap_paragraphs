@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Text and image sub-module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function vbp_embed_existing_content_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__text_and_image' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}

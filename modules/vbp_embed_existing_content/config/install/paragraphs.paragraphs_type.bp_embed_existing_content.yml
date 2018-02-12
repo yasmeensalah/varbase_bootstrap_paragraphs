@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bp_embed_existing_content
+label: 'Embed existing content'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
