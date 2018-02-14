@@ -17,5 +17,4 @@ dependencies:
   - varbase_landing
   - varbase_media
   - varbase_page
-version: 8.x-4.x-dev
 package: Varbase

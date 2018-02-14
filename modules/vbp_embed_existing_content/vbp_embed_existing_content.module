@@ -5,6 +5,8 @@
  * Text and image sub-module file.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -14,4 +16,39 @@ function vbp_embed_existing_content_theme($existing, $type, $theme, $path) {
       'base hook' => 'paragraph',
     ],
   ];
+}
+
+/**
+ * Implements hook_form_paragraphs_subform_alter().
+ */
+function vbp_embed_existing_content_form_paragraphs_subform_alter(array &$subform, $form_state, $delta) {
+  if (isset($subform['field_bp_existing_content']['widget'][0]['target_id']['#default_value'])) {
+    $bundle = $subform['field_bp_existing_content']['widget'][0]['target_id']['#default_value']->bundle();
+    $subform['field_bp_existing_content_bundle'] = ['value' => $bundle];
+    $form_state->set('delta', $delta);
+  }
+
+  $subform['field_bp_existing_content']['widget'][0]['target_id']['#ajax'] = [
+    'callback' => 'get_bundle_view_modes',
+    'event' => 'autocompleteclose',
+    'wrapper' => "field-bp-content-view-mode-wrapper-$delta",
+    'progress' => [
+      'type' => 'throbber',
+      'message' => t('...'),
+    ],
+  ];
+
+  $subform['field_bp_content_view_mode']['#prefix'] = "<div id=\"field-bp-content-view-mode-wrapper-$delta\">";
+  $subform['field_bp_content_view_mode']['#suffix'] = '</div>';
+}
+
+/**
+ * Ajax Callback to set the available display modes for the selected bundle.
+ */
+function get_bundle_view_modes($form, FormStateInterface $form_state) {
+  $delta = $form_state->get('delta');
+  $bundle = $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_existing_content_bundle']['value'];
+  $display_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', $bundle);
+  $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_content_view_mode']['widget']['#options'] = $display_modes;
+  return $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_content_view_mode'];
 }
