@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_theme().
@@ -22,10 +23,38 @@ function vbp_embed_existing_content_theme($existing, $type, $theme, $path) {
  * Implements hook_form_paragraphs_subform_alter().
  */
 function vbp_embed_existing_content_form_paragraphs_subform_alter(array &$subform, $form_state, $delta) {
-  if (isset($subform['field_bp_existing_content']['widget'][0]['target_id']['#default_value'])) {
+  // $default_parents = [0, 'field_lp_paragraphs', 'subform', 'field_bp_existing_content_wrapper'];
+  // if (array_diff($subform['field_bp_existing_content']['#parents'],$default_parents)){
+  //   $parent = array_values(array_diff($subform['field_bp_existing_content']['#parents'],$default_parents))[0];
+  //   $form_state->set('parent', $parent);
+  //   $bundle = Node::load($subform['field_bp_existing_content']['widget'][0]['target_id']['#default_value']->id())->bundle();
+  //   $subform['field_bp_existing_content_bundle'] = ['value' => $bundle];
+  //   $form_state->set('delta', $delta);
+  //   $display_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', $bundle);
+  //   $form_state->getValue('field_lp_paragraphs')[0]['subform'][$form_state->get('parent')][0]['subform']['field_bp_content_view_mode']['widget']['#options'] = $display_modes;
+  //   $form_state->set('display_modes', $display_modes);
+  // }
+  // var_dump($form_state->getValue('field_lp_paragraphs')[0]['subform'][$parent][0]['subform']['field_bp_content_view_mode']);
+
+
+  if(isset($subform['field_bp_existing_content'])) {
+    $field_lp_paragraphs = $form_state->getValue('field_lp_paragraphs');
+  if (isset($field_lp_paragraphs[$delta]['subform']['field_bp_existing_content'][0]['target_id'])) {
+    $bundle = Node::load($field_lp_paragraphs[$delta]['subform']['field_bp_existing_content'][0]['target_id'])->bundle();
+    $subform['field_bp_existing_content_bundle'] = ['value' => $bundle];
+    $form_state->set('delta', $delta);
+    $display_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', $bundle);
+    $subform['field_bp_content_view_mode']['widget']['#options'] = $display_modes;
+  }
+  elseif (isset($subform['field_bp_existing_content']['widget'][0]['target_id']['#default_value'])) {
     $bundle = $subform['field_bp_existing_content']['widget'][0]['target_id']['#default_value']->bundle();
     $subform['field_bp_existing_content_bundle'] = ['value' => $bundle];
     $form_state->set('delta', $delta);
+    $display_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', $bundle);
+    $subform['field_bp_content_view_mode']['widget']['#options'] = $display_modes;
+  }
+  else {
+    $subform['field_bp_content_view_mode']['widget']['#options']=[];
   }
 
   $subform['field_bp_existing_content']['widget'][0]['target_id']['#ajax'] = [
@@ -40,15 +69,32 @@ function vbp_embed_existing_content_form_paragraphs_subform_alter(array &$subfor
 
   $subform['field_bp_content_view_mode']['#prefix'] = "<div id=\"field-bp-content-view-mode-wrapper-$delta\">";
   $subform['field_bp_content_view_mode']['#suffix'] = '</div>';
+  }
 }
 
 /**
  * Ajax Callback to set the available display modes for the selected bundle.
  */
 function get_bundle_view_modes($form, FormStateInterface $form_state) {
+
   $delta = $form_state->get('delta');
+  // $form_state->getValue('field_lp_paragraphs')[0]['subform'][$form_state->get('parent')][0]['subform']['field_bp_content_view_mode']['widget']['#options'] = $form_state->get('display_modes');
+  // var_dump($form_state->getValue('field_lp_paragraphs')[0]['subform'][$form_state->get('parent')][0]['subform']['field_bp_content_view_mode']['widget']['#options']);
+  // return $form_state->getValue('field_lp_paragraphs')[0]['subform'][$form_state->get('parent')][0]['subform']['field_bp_content_view_mode'];
+  return $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_content_view_mode'];
   $bundle = $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_existing_content_bundle']['value'];
   $display_modes = \Drupal::service('entity_display.repository')->getViewModeOptionsByBundle('node', $bundle);
   $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_content_view_mode']['widget']['#options'] = $display_modes;
   return $form['field_lp_paragraphs']['widget'][$delta]['subform']['field_bp_content_view_mode'];
+}
+
+function vbp_embed_existing_content_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+
+  // Add a css class to widget form elements for all fields of type mytype.
+  $field_definition = $context['items']->getFieldDefinition();
+  if ($field_definition->getType() == 'entity_reference_display') {
+
+    // Be sure not to overwrite existing attributes.
+    //var_dump($element);die;
+  }
 }
